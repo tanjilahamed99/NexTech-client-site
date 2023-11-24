@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import UseAuth from "../../Hooks/useAuth/UseAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
 
-    const { user } = UseAuth()
+    const { user, logOut } = UseAuth()
 
     const ulLinks = <>
         <li><Link>Home</Link></li>
@@ -13,13 +14,36 @@ const Navbar = () => {
         }
     </>
 
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "successful Logout",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
+    }
+
+
     const profile = <>
-        <li>{user?.displayName}</li>
+        <li><Link>{user?.displayName}</Link></li>
         <li><Link>Dashboard</Link></li>
         {
-            user && <li>Logout</li>
+            user && <li><Link onClick={handleLogout}>Logout</Link></li>
         }
     </>
+
+
 
     return (
         <div className="navbar py-5 border-b-2 z-10 fixed bg-opacity-20 bg-black container px-5">

@@ -2,19 +2,31 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
 import UseAxiosPublic from '../../../Hooks/AxiosPublic/UseAxiosPublic';
+import UseAuth from '../../../Hooks/useAuth/UseAuth';
+import useFeatured from '../../../Hooks/useFeatured/useFeatured';
 
 const DisplayFeatured = ({ featured }) => {
     const axiosPublic = UseAxiosPublic()
+    const { user } = UseAuth()
+    const [, refetch] = useFeatured()
+    const [disabled,setDisabled] = useState(false)
 
     const [vote, setVote] = useState(false)
 
-    const { name, brand, image, upload_date, upvote, tags } = featured
+    const { name, brand, image, upload_date, upvote, tags, _id } = featured
 
     const handleVote = () => {
+        if (user) {
+            axiosPublic.patch(`/featured/${_id}`)
+                .then(res => {
+                    if (res.data.modifiedCount > 0) {
+                        refetch()
+                        setVote(true)
+                        setDisabled(true)
+                    }
+                })
+        }
 
-        // const 
-
-            setVote(true)
     }
 
 
@@ -28,7 +40,7 @@ const DisplayFeatured = ({ featured }) => {
                     <p>{upload_date}</p>
                 </div>
                 <div className="card-actions mt-3">
-                    <button onClick={handleVote} className='btn btn-sm btn-outline text-xl'><FaArrowCircleUp className={vote ? 'text-red-600' : 'text-black'}></FaArrowCircleUp>{upvote}</button>
+                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl'><FaArrowCircleUp className={vote ? 'text-red-600' : 'text-black'}></FaArrowCircleUp>{upvote}</button>
                 </div>
                 <hr className='text-black text-lg my-4 border border-black' />
                 <div className='flex items-center w-fit gap-4'>
