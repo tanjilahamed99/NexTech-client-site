@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
+import UseAxiosPublic from '../../../Hooks/AxiosPublic/UseAxiosPublic';
 
 const DisplayFeatured = ({ featured }) => {
+    const axiosPublic = UseAxiosPublic()
 
     const [vote, setVote] = useState(false)
 
     const { name, brand, image, upload_date, upvote, tags } = featured
 
     const handleVote = () => {
-        setVote(true)
+
+        // const 
+
+            setVote(true)
     }
 
 
@@ -25,7 +30,7 @@ const DisplayFeatured = ({ featured }) => {
                 <div className="card-actions mt-3">
                     <button onClick={handleVote} className='btn btn-sm btn-outline text-xl'><FaArrowCircleUp className={vote ? 'text-red-600' : 'text-black'}></FaArrowCircleUp>{upvote}</button>
                 </div>
-                <hr className='text-black text-lg my-4 border border-black'/>
+                <hr className='text-black text-lg my-4 border border-black' />
                 <div className='flex items-center w-fit gap-4'>
                     <p>#{tags[0]}</p>
                     <p>#{tags[1]}</p>

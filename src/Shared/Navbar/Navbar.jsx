@@ -5,7 +5,7 @@ const Navbar = () => {
     const ulLinks = <>
         <li><Link>Home</Link></li>
         <li><Link>Products</Link></li>
-        <li><Link>Login</Link></li>
+        <li><Link to={'/login'}>Login</Link></li>
     </>
 
     const profile = <>
