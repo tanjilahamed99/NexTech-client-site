@@ -16,8 +16,6 @@ const Featured = () => {
         }
     })
 
-    console.log(featuredData)
-
     return (
         <div className="my-20">
             <SectionTittle subTittle={"Latest"} tittle={"Featured Products"}></SectionTittle>

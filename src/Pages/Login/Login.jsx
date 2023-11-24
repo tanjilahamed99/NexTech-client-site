@@ -1,16 +1,37 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UseAuth from "../../Hooks/useAuth/UseAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
     const [see, setSee] = useState(false)
+    const { loginUser } = UseAuth()
+    const navigate = useNavigate()
 
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
+        loginUser(data.email, data.password)
+            .then(() => {
+                Swal.fire({
+                    icon: "success",
+                    title: "successful login",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                navigate('/')
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
     }
 
     return (

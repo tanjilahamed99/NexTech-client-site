@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
+import UseAuth from "../../Hooks/useAuth/UseAuth";
 
 const Navbar = () => {
+
+    const { user } = UseAuth()
 
     const ulLinks = <>
         <li><Link>Home</Link></li>
         <li><Link>Products</Link></li>
-        <li><Link to={'/login'}>Login</Link></li>
+        {
+            !user && <li><Link to={'/login'}>Login</Link></li>
+        }
     </>
 
     const profile = <>
-        <li><Link>Name</Link></li>
+        <li>{user?.displayName}</li>
         <li><Link>Dashboard</Link></li>
-        <li><Link>Dashboard</Link></li>
+        {
+            user && <li>Logout</li>
+        }
     </>
 
     return (
@@ -41,22 +48,24 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar-end">
-                <div className="">
-                    <div className="flex-none">
-                        <div className="dropdown dropdown-end">
-                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                {
-                                    profile
-                                }
-                            </ul>
+                {
+                    user && <div className="">
+                        <div className="flex-none">
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img alt="" src={user?.photoURL} />
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                    {
+                                        profile
+                                    }
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     );
