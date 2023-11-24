@@ -59,6 +59,9 @@ const Footer = () => {
                     </div>
                 </nav>
             </div>
+            <aside className="text-center text-white py-5">
+                <p>Copyright © 2023 - All right reserved by NexTech</p>
+            </aside>
         </footer>
     );
 };

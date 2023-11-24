@@ -1,9 +1,13 @@
 import Banner from "../../Pages/Home/Banner/Banner"
+import Featured from "../../Pages/Home/Featured/Featured";
 
 
 const Home = () => {
     return (
-        <Banner></Banner>
+        <div>
+            <Banner></Banner>
+            <Featured></Featured>
+        </div>
     );
 };
 
