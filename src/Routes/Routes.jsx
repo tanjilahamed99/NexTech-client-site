@@ -5,6 +5,7 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import DisplayFeaturedDetail from "../Pages/DisplayFeaturedDetail/DispalyFeaturedDetail";
 import PrivateRoutes from "./PrivateRoutes";
+import Products from "../Pages/Products/Products";
 
 const Routes = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/products',
+                element: <Products></Products>
             },
             {
                 path: '/featuredDetail/:id',
