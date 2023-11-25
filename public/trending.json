@@ -1,0 +1,386 @@
+[
+    {
+        "name": "SmartVision 4K Ultra HD TV",
+        "brand": "ElectroTech",
+        "image": "https://i.ibb.co/jb0HX6z/1.jpg",
+        "upload_date": "2023-11-21",
+        "upVote": 11,
+        "tags": [
+            "smart TV",
+            "4K",
+            "entertainment"
+        ]
+    },
+    {
+        "name": "Gaming Pro RGB Mechanical Keyboard",
+        "brand": "TechGear",
+        "image": "https://i.ibb.co/TgyQ0dt/2.jpg",
+        "upload_date": "2023-11-22",
+        "upVote": 8,
+        "tags": [
+            "gaming",
+            "RGB",
+            "mechanical keyboard"
+        ]
+    },
+    {
+        "name": "Premium Noise-Canceling Headphones",
+        "brand": "AudioBliss",
+        "image": "https://i.ibb.co/V9f9BVz/3.jpg",
+        "upload_date": "2023-11-23",
+        "upVote": 15,
+        "tags": [
+            "headphones",
+            "noise-canceling",
+            "audio"
+        ]
+    },
+    {
+        "name": "UltraFast SSD 1TB",
+        "brand": "SpeedTech",
+        "image": "https://i.ibb.co/vB2VmQC/4.jpg",
+        "upload_date": "2023-11-24",
+        "upVote": 20,
+        "tags": [
+            "storage",
+            "SSD",
+            "technology"
+        ]
+    },
+    {
+        "name": "Wireless Charging Pad",
+        "brand": "PowerCharge",
+        "image": "https://i.ibb.co/XxYx7mk/5.jpg",
+        "upload_date": "2023-11-25",
+        "upVote": 12,
+        "tags": [
+            "charging",
+            "wireless",
+            "gadgets"
+        ]
+    },
+    {
+        "name": "Smart Coffee Maker",
+        "brand": "BrewTech",
+        "image": "https://i.ibb.co/fGz3nnK/6.jpg",
+        "upload_date": "2023-11-26",
+        "upVote": 18,
+        "tags": [
+            "coffee",
+            "smart appliance",
+            "tech"
+        ]
+    },
+    {
+        "name": "Fitness Tracker Watch",
+        "brand": "FitGear",
+        "image": "https://i.ibb.co/2YkDW59/7.jpg",
+        "upload_date": "2023-11-27",
+        "upVote": 14,
+        "tags": [
+            "fitness",
+            "tracker",
+            "wearable"
+        ]
+    },
+    {
+        "name": "Portable Bluetooth Speaker",
+        "brand": "SoundWave",
+        "image": "https://i.ibb.co/CJ4nh2S/8.jpg",
+        "upload_date": "2023-11-28",
+        "upVote": 9,
+        "tags": [
+            "speaker",
+            "Bluetooth",
+            "audio"
+        ]
+    },
+    {
+        "name": "Curved Ultrawide Gaming Monitor",
+        "brand": "ViewSync",
+        "image": "https://i.ibb.co/2tJ9fDQ/9.jpg",
+        "upload_date": "2023-11-29",
+        "upVote": 25,
+        "tags": [
+            "gaming",
+            "monitor",
+            "ultrawide"
+        ]
+    },
+    {
+        "name": "Smart Home Security Camera",
+        "brand": "SecureVue",
+        "image": "https://i.ibb.co/VDHyrXJ/10.jpg",
+        "upload_date": "2023-11-30",
+        "upVote": 16,
+        "tags": [
+            "security",
+            "camera",
+            "smart home"
+        ]
+    },
+    {
+        "name": "Wireless Ergonomic Mouse",
+        "brand": "ErgoClick",
+        "image": "https://i.ibb.co/Yk8BfPz/download-8.jpg",
+        "upload_date": "2023-12-01",
+        "upVote": 11,
+        "tags": [
+            "mouse",
+            "wireless",
+            "ergonomic"
+        ]
+    },
+    {
+        "name": "Galaxy S22",
+        "brand": "Samsung",
+        "image": "https://i.ibb.co/0ZrTDbk/download-9.jpg",
+        "upload_date": "2023-11-21",
+        "upVote": 11,
+        "tags": [
+            "mobile phone",
+            "Samsung",
+            "Galaxy S22"
+        ]
+    },
+    {
+        "name": "iPhone 14 Pro",
+        "brand": "Apple",
+        "image": "https://i.ibb.co/7pHD3NR/download-10.jpg",
+        "upload_date": "2023-11-22",
+        "upVote": 8,
+        "tags": [
+            "mobile phone",
+            "Apple",
+            "iPhone 14 Pro"
+        ]
+    },
+    {
+        "name": "Pixel 7",
+        "brand": "Google",
+        "image": "https://i.ibb.co/jhxkYG6/download-11.jpg",
+        "upload_date": "2023-11-23",
+        "upVote": 15,
+        "tags": [
+            "mobile phone",
+            "Google",
+            "Pixel 7"
+        ]
+    },
+    {
+        "name": "OnePlus 10",
+        "brand": "OnePlus",
+        "image": "https://i.ibb.co/N6msWtM/download-12.jpg",
+        "upload_date": "2023-11-24",
+        "upVote": 20,
+        "tags": [
+            "mobile phone",
+            "OnePlus",
+            "OnePlus 10"
+        ]
+    },
+    {
+        "name": "Xperia 5 III",
+        "brand": "Sony",
+        "image": "https://i.ibb.co/wNyVb6p/download-13.jpg",
+        "upload_date": "2023-11-25",
+        "upVote": 12,
+        "tags": [
+            "mobile phone",
+            "Sony",
+            "Xperia 5 III"
+        ]
+    },
+    {
+        "name": "Mi 12",
+        "brand": "Xiaomi",
+        "image": "https://i.ibb.co/fHy7pgG/download-14.jpg",
+        "upload_date": "2023-11-26",
+        "upVote": 18,
+        "tags": [
+            "mobile phone",
+            "Xiaomi",
+            "Mi 12"
+        ]
+    },
+    {
+        "name": "Zenfone 8",
+        "brand": "Asus",
+        "image": "https://i.ibb.co/ZKphFcp/download-15.jpg",
+        "upload_date": "2023-11-27",
+        "upVote": 14,
+        "tags": [
+            "mobile phone",
+            "Asus",
+            "Zenfone 8"
+        ]
+    },
+    {
+        "name": "BlackBerry Key3",
+        "brand": "BlackBerry",
+        "image": "https://i.ibb.co/3fSzYsx/download-16.jpg",
+        "upload_date": "2023-11-28",
+        "upVote": 9,
+        "tags": [
+            "mobile phone",
+            "BlackBerry",
+            "Key3"
+        ]
+    },
+    {
+        "name": "Nokia 9 PureView",
+        "brand": "Nokia",
+        "image": "https://i.ibb.co/JHMsnyf/download-17.jpg",
+        "upload_date": "2023-11-29",
+        "upVote": 25,
+        "tags": [
+            "mobile phone",
+            "Nokia",
+            "9 PureView"
+        ]
+    },
+    {
+        "name": "LG G8 ThinQ",
+        "brand": "LG",
+        "image": "https://i.ibb.co/16zT93m/download-18.jpg",
+        "upload_date": "2023-11-30",
+        "upVote": 16,
+        "tags": [
+            "mobile phone",
+            "LG",
+            "G8 ThinQ"
+        ]
+    },
+    {
+        "name": "Motorola Edge 30",
+        "brand": "Motorola",
+        "image": "https://i.ibb.co/nQW03kz/download-19.jpg",
+        "upload_date": "2023-12-01",
+        "upVote": 11,
+        "tags": [
+            "mobile phone",
+            "Motorola",
+            "Edge 30"
+        ]
+    },
+    {
+        "name": "TechBook Pro X",
+        "brand": "TechMaster",
+        "image": "https://i.ibb.co/CzTSCVX/download-8.jpg",
+        "upload_date": "2023-12-10",
+        "upVote": 9,
+        "tags": [
+            "laptop",
+            "professional",
+            "high-performance"
+        ]
+    },
+    {
+        "name": "UltraSlim Notebook Plus",
+        "brand": "SlimTech",
+        "image": "https://i.ibb.co/j4YXGTh/download-9.jpg",
+        "upload_date": "2023-12-11",
+        "upVote": 12,
+        "tags": [
+            "laptop",
+            "ultraslim",
+            "portable"
+        ]
+    },
+    {
+        "name": "PowerBook Elite",
+        "brand": "PowerTech",
+        "image": "https://i.ibb.co/4Yh4NzN/download-10.jpg",
+        "upload_date": "2023-12-12",
+        "upVote": 15,
+        "tags": [
+            "laptop",
+            "powerful",
+            "elite"
+        ]
+    },
+    {
+        "name": "ProNote Xperience",
+        "brand": "ProTech",
+        "image": "https://i.ibb.co/Q9YFFwV/download-11.jpg",
+        "upload_date": "2023-12-13",
+        "upVote": 18,
+        "tags": [
+            "laptop",
+            "pro",
+            "user experience"
+        ]
+    },
+    {
+        "name": "GamerBook Ultimate",
+        "brand": "GamingTech",
+        "image": "https://i.ibb.co/0yN1MfL/download-12.jpg",
+        "upload_date": "2023-12-14",
+        "upVote": 22,
+        "tags": [
+            "laptop",
+            "gaming",
+            "ultimate"
+        ]
+    },
+    {
+        "name": "ZenBook Infinity",
+        "brand": "ZenTech",
+        "image": "https://i.ibb.co/Yf9qqN8/download-13.jpg",
+        "upload_date": "2023-12-15",
+        "upVote": 14,
+        "tags": [
+            "laptop",
+            "zen",
+            "infinity"
+        ]
+    },
+    {
+        "name": "SwiftBook Ultrathin",
+        "brand": "SwiftTech",
+        "image": "https://i.ibb.co/WHg4P1J/download-14.jpg",
+        "upload_date": "2023-12-16",
+        "upVote": 11,
+        "tags": [
+            "laptop",
+            "swift",
+            "ultrathin"
+        ]
+    },
+    {
+        "name": "EcoBook Sustainable",
+        "brand": "EcoTech",
+        "image": "https://i.ibb.co/x6QSJLW/download-15.jpg",
+        "upload_date": "2023-12-17",
+        "upVote": 8,
+        "tags": [
+            "laptop",
+            "eco-friendly",
+            "sustainable"
+        ]
+    },
+    {
+        "name": "SurfaceBook Pro X",
+        "brand": "Microsoft",
+        "image": "https://i.ibb.co/NZPJHFk/download-16.jpg",
+        "upload_date": "2023-12-18",
+        "upVote": 17,
+        "tags": [
+            "laptop",
+            "surface",
+            "professional"
+        ]
+    },
+    {
+        "name": "Inspiron FlexBook",
+        "brand": "Dell",
+        "image": "https://i.ibb.co/MkKG9y9/images.jpg",
+        "upload_date": "2023-12-19",
+        "upVote": 20,
+        "tags": [
+            "laptop",
+            "inspiron",
+            "flexible"
+        ]
+    }
+]
