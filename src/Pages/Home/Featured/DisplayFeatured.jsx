@@ -4,12 +4,15 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import UseAxiosPublic from '../../../Hooks/AxiosPublic/UseAxiosPublic';
 import UseAuth from '../../../Hooks/useAuth/UseAuth';
 import useFeatured from '../../../Hooks/useFeatured/useFeatured';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const DisplayFeatured = ({ featured }) => {
     const axiosPublic = UseAxiosPublic()
     const { user } = UseAuth()
     const [, refetch] = useFeatured()
-    const [disabled,setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(false)
+    const navigate = useNavigate()
 
     const [vote, setVote] = useState(false)
 
@@ -17,14 +20,23 @@ const DisplayFeatured = ({ featured }) => {
 
     const handleVote = () => {
         if (user) {
-            axiosPublic.patch(`/featured/${_id}`)
+            axiosPublic.patch(`/featured?id=${_id}&upvote=${upvote}`)
                 .then(res => {
-                    if (res.data.modifiedCount > 0) {
+                    if (res.data) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "successful Voted",
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
                         refetch()
                         setVote(true)
                         setDisabled(true)
                     }
                 })
+        }
+        else {
+            return navigate('/login')
         }
 
     }
