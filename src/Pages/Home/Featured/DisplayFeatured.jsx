@@ -4,7 +4,7 @@ import { FaArrowCircleUp } from 'react-icons/fa';
 import UseAxiosPublic from '../../../Hooks/AxiosPublic/UseAxiosPublic';
 import UseAuth from '../../../Hooks/useAuth/UseAuth';
 import useFeatured from '../../../Hooks/useFeatured/useFeatured';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const DisplayFeatured = ({ featured }) => {
@@ -46,7 +46,9 @@ const DisplayFeatured = ({ featured }) => {
         <div className="card shadow-xl">
             <img className='h-[300px] w-[300px] mx-auto' src={image} alt="" />
             <div className="card-body">
-                <h2 className="text-lg font-bold ">{name}</h2>
+                <Link to={`/featuredDetail/${_id}`}>
+                    <h2 className="text-lg font-bold ">{name}</h2>
+                </Link>
                 <div className='flex items-center font-semibold text-sm'>
                     <p>{brand}</p>
                     <p>{upload_date}</p>
