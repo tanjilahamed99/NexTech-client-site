@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/useAuth/UseAuth";
 import Swal from "sweetalert2";
 
@@ -10,6 +10,8 @@ const Login = () => {
     const [see, setSee] = useState(false)
     const { loginUser } = UseAuth()
     const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location)
 
     const { register, handleSubmit } = useForm()
 
@@ -22,7 +24,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                navigate('/')
+                location.state ? navigate(location.state) : navigate('/')
             })
             .catch(error => {
                 Swal.fire({
