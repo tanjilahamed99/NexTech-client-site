@@ -1,7 +1,42 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
+import useFeatured from "../../Hooks/useFeatured/useFeatured";
 
 const DisplayFeaturedDetail = () => {
-    const { name, brand, image, upload_date, upvote, tags } = useLoaderData()
+    const { name, brand, image, upload_date, upvote, tags, _id, reported } = useLoaderData()
+
+    const axiosPublic = UseAxiosPublic()
+    const [, refetch] = useFeatured()
+
+    // console.log(_id)
+
+    const handleReport = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't to report this products",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosPublic.put(`/featuredReport/${id}`)
+                    .then(res => {
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                title: "Reported successful!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
+                    })
+
+            }
+        });
+    }
 
     // const 
     return (
@@ -19,6 +54,12 @@ const DisplayFeaturedDetail = () => {
                     <p>#{tags[0]}</p>
                     <p>#{tags[1]}</p>
                     <p>#{tags[2]}</p>
+                </div>
+                <div className="my-3">
+                    {
+                        reported ? <button className="btn btn-outline text-red-500">Already Reported</button> : <button onClick={() => handleReport(_id)} className="btn btn-outline text-red-500">Report</button>
+                    }
+
                 </div>
             </div>
         </div>
