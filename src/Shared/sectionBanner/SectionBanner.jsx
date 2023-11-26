@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 const SectionBanner = ({title,subTittle}) => {
     return (
-        <div className="hero min-h-screen bg-fixed rounded-lg bg-cover bg-center" style={{ backgroundImage: 'url(https://i.ibb.co/Gndbxzn/images-1.jpg)' }}>
+        <div className="hero h-[500px] bg-fixed bg-cover bg-center" style={{ backgroundImage: 'url(https://i.ibb.co/Gndbxzn/images-1.jpg)' }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">

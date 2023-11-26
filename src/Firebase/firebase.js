@@ -18,9 +18,7 @@ const firebaseConfig = {
     storageBucket: "nextech-4bdaf.appspot.com",
     messagingSenderId: "1001023433056",
     appId: "1:1001023433056:web:d6b66ae96fbe6850d31605"
-};
-
-console.log(import.meta.env.VITE_apiKey)
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
