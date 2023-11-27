@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { FaArrowCircleUp } from 'react-icons/fa';
+import { IoTriangleSharp } from "react-icons/io5";
 import UseAxiosPublic from '../../../Hooks/AxiosPublic/UseAxiosPublic';
 import UseAuth from '../../../Hooks/useAuth/UseAuth';
 import useFeatured from '../../../Hooks/useFeatured/useFeatured';
@@ -54,7 +54,7 @@ const DisplayFeatured = ({ featured }) => {
                     <p>{upload_date}</p>
                 </div>
                 <div className="card-actions mt-3">
-                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl'><FaArrowCircleUp className={vote ? 'text-red-600' : 'text-black'}></FaArrowCircleUp>{upvote}</button>
+                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl'><IoTriangleSharp className={vote ? 'text-red-600' : 'text-black'}></IoTriangleSharp>{upvote}</button>
                 </div>
                 <hr className='text-black text-lg my-4 border border-black' />
                 <div className='flex items-center w-fit gap-4'>

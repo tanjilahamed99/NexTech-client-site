@@ -1,13 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
-import useFeatured from "../../Hooks/useFeatured/useFeatured";
 
 const DisplayFeaturedDetail = () => {
     const { name, brand, image, upload_date, upvote, tags, _id, reported } = useLoaderData()
 
     const axiosPublic = UseAxiosPublic()
-    const [, refetch] = useFeatured()
 
     // console.log(_id)
 
@@ -30,10 +28,8 @@ const DisplayFeaturedDetail = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            refetch()
                         }
                     })
-
             }
         });
     }
