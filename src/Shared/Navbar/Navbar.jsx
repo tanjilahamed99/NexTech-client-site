@@ -51,7 +51,7 @@ const Navbar = () => {
 
     const profile = <>
         <li><Link>{user?.displayName}</Link></li>
-        <li><Link>Dashboard</Link></li>
+        <li><Link to={'/dashboard'}>Dashboard</Link></li>
         {
             user && <li><Link onClick={handleLogout}>Logout</Link></li>
         }

@@ -7,6 +7,11 @@ import DisplayFeaturedDetail from "../Pages/DisplayFeaturedDetail/DispalyFeature
 import PrivateRoutes from "./PrivateRoutes";
 import Products from "../Pages/Products/Products";
 import DisplayTrendingDetails from "../Pages/DisplayTrendingDetails/DisplayTrendingDetails";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
+import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts";
+import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import Payment from "../Pages/Dashboard/payment/Payment";
 
 const Routes = createBrowserRouter([
     {
@@ -40,8 +45,27 @@ const Routes = createBrowserRouter([
         element: <SignUp></SignUp>
     },
     {
-        path: '/signUp',
-        element: <SignUp></SignUp>
+        path: '/dashboard',
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        children: [
+            // normal user dashboard
+            {
+                path: '/dashboard/myProfile',
+                element: <PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>
+            },
+            {
+                path: '/dashboard/addProducts',
+                element: <PrivateRoutes><AddProducts></AddProducts></PrivateRoutes>
+            },
+            {
+                path: '/dashboard/myProducts',
+                element: <PrivateRoutes><MyProducts></MyProducts></PrivateRoutes>
+            },
+            {
+                path: '/dashboard/payment',
+                element: <PrivateRoutes><Payment></Payment></PrivateRoutes>
+            },
+        ]
     },
 ])
 
