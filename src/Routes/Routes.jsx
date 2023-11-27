@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import DisplayFeaturedDetail from "../Pages/DisplayFeaturedDetail/DispalyFeaturedDetail";
 import PrivateRoutes from "./PrivateRoutes";
 import Products from "../Pages/Products/Products";
+import DisplayTrendingDetails from "../Pages/DisplayTrendingDetails/DisplayTrendingDetails";
 
 const Routes = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ const Routes = createBrowserRouter([
                 path: '/featuredDetail/:id',
                 element: <PrivateRoutes><DisplayFeaturedDetail></DisplayFeaturedDetail></PrivateRoutes>,
                 loader: ({ params }) => fetch(`http://localhost:5000/featured/${params.id}`)
+            },
+            {
+                path: '/trendingDetail/:id',
+                element: <PrivateRoutes><DisplayTrendingDetails></DisplayTrendingDetails></PrivateRoutes>
             },
         ]
     },
