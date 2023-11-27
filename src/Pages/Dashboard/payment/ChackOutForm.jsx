@@ -2,6 +2,9 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import UseAxiosPublic from "../../../Hooks/AxiosPublic/UseAxiosPublic";
 import { useNavigate } from "react-router-dom";
+import UseAuth from "../../../Hooks/useAuth/UseAuth";
+import Swal from "sweetalert2";
+import useUsers from "../../../Hooks/useUsers/useUsers";
 
 const CheckOutForm = () => {
     const stripe = useStripe()
@@ -9,6 +12,8 @@ const CheckOutForm = () => {
     const axiosPublic = UseAxiosPublic()
     const [clientSecret, setClientSecret] = useState('')
     const navigate = useNavigate()
+    const { user } = UseAuth()
+    const [,refetch] = useUsers()
 
     useEffect(() => {
         axiosPublic.post('/create-payment-intent', { price: 40 })
@@ -58,9 +63,21 @@ const CheckOutForm = () => {
             console.log(confirmError)
         } else {
             if (paymentIntent.status === "succeeded") {
-                // axiosPublic.patch('/')
-                //     .then(res => console.log(res.data))
-                navigate('/dashboard/myProfile')
+                axiosPublic.patch('/users', {
+                    email: user?.email
+                })
+                    .then(res => {
+                        if (res.data.modifiedCount > 0) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "successful payment",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            refetch()
+                            navigate('/dashboard/myProfile')
+                        }
+                    })
             }
         }
 

@@ -48,7 +48,7 @@ const DisplayTrendingDetails = () => {
         });
     }
 
-    const { data: review = [] } = useQuery({
+    const { data: review = [], refetch: reFetchAgin } = useQuery({
         queryKey: ['review'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/trendingReview/${id}`)
@@ -76,6 +76,7 @@ const DisplayTrendingDetails = () => {
                         text: "Your file has been deleted.",
                         icon: "success"
                     });
+                    reFetchAgin()
                 }
             })
 

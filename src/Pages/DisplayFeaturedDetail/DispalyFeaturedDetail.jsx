@@ -20,7 +20,7 @@ const DisplayFeaturedDetail = () => {
         }
     })
 
-    const { data: review = [] } = useQuery({
+    const { data: review = [], refetch: reFetchAgin } = useQuery({
         queryKey: ['review'],
         queryFn: async () => {
             const res = await axiosPublic.get(`/featuredReview/${id}`)
@@ -74,6 +74,7 @@ const DisplayFeaturedDetail = () => {
                         icon: "success"
                     });
                 }
+                reFetchAgin()
             })
 
     }

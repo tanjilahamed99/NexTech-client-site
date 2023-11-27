@@ -6,29 +6,38 @@ import UseAuth from "../../Hooks/useAuth/UseAuth";
 import { updateProfile } from "firebase/auth";
 import auth from "../../Firebase/firebase";
 import Swal from "sweetalert2";
+import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
 
 
 const SignUp = () => {
     const { createUser } = UseAuth()
     const [see, setSee] = useState(false)
     const navigate = useNavigate()
+    const axiosPublic = UseAxiosPublic()
 
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) => {
         createUser(data.email, data.password)
             .then(() => {
-                    updateProfile(auth.currentUser, {
-                        displayName: data.name, photoURL: data.photo
-                    }).then(() => {
-                        Swal.fire({
-                            icon: "success",
-                            title: "account created",
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        navigate('/')
+                updateProfile(auth.currentUser, {
+                    displayName: data.name, photoURL: data.photo
+                }).then(() => {
+                    Swal.fire({
+                        icon: "success",
+                        title: "account created",
+                        showConfirmButton: false,
+                        timer: 1500
                     })
+                    const userData = {
+                        name: data.name,
+                        email: data.email,
+                        status: false
+                    }
+                    axiosPublic.post('/users', userData)
+                        .then(res => console.log(res.data))
+                    navigate('/')
+                })
             })
             .catch(error => {
                 Swal.fire({
