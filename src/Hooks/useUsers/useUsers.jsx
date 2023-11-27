@@ -13,7 +13,7 @@ const useUsers = () => {
             return res.data
         }
     })
-    return [profile]
+    return [profile,refetch]
 };
 
 export default useUsers;

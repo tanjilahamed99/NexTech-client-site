@@ -13,7 +13,7 @@ const CheckOutForm = () => {
     const [clientSecret, setClientSecret] = useState('')
     const navigate = useNavigate()
     const { user } = UseAuth()
-    const [,refetch] = useUsers()
+    const [, refetch] = useUsers()
 
     useEffect(() => {
         axiosPublic.post('/create-payment-intent', { price: 40 })
@@ -74,8 +74,8 @@ const CheckOutForm = () => {
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            refetch()
                             navigate('/dashboard/myProfile')
+                            refetch()
                         }
                     })
             }
