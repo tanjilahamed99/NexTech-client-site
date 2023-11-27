@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import UseAuth from "../../Hooks/useAuth/UseAuth";
 import { useForm } from "react-hook-form";
 import SectionTittle from "../../Shared/SectionTittle/SectionTittle";
+import DisplayReview from "../../Components/DisplayReview";
 
 const DisplayFeaturedDetail = () => {
     const axiosPublic = UseAxiosPublic()
@@ -19,6 +20,13 @@ const DisplayFeaturedDetail = () => {
         }
     })
 
+    const { data: review = [] } = useQuery({
+        queryKey: ['review'],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/featuredReview/${id}`)
+            return res.data
+        }
+    })
 
     const handleReport = (id) => {
         Swal.fire({
@@ -48,14 +56,13 @@ const DisplayFeaturedDetail = () => {
 
     // review
     const onSubmit = (data) => {
-
-
         const reviewData = {
             featuredId: id,
             featuredName: featured.name,
             userName: user.displayName,
             userPhoto: user.photoURL,
-            rating: data.rating
+            rating: data.rating,
+            desc: data.desc
         }
 
         axiosPublic.post('/featuredReview', reviewData)
@@ -99,8 +106,10 @@ const DisplayFeaturedDetail = () => {
             <div>
                 {/* review section */}
                 {/* display reviews */}
-                <div>
-
+                <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  lg:grid-cols-3">
+                    {
+                        review.map(item => <DisplayReview key={item._id} review={item}></DisplayReview>)
+                    }
                 </div>
                 {/* review form */}
                 <div className="my-10">
