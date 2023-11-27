@@ -23,8 +23,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path: '/featuredDetail/:id',
-                element: <PrivateRoutes><DisplayFeaturedDetail></DisplayFeaturedDetail></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/featured/${params.id}`)
+                element: <PrivateRoutes><DisplayFeaturedDetail></DisplayFeaturedDetail></PrivateRoutes>
             },
             {
                 path: '/trendingDetail/:id',

@@ -1,11 +1,18 @@
-import { useLoaderData } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const DisplayFeaturedDetail = () => {
-    const { name, brand, image, upload_date, upvote, tags, _id, reported } = useLoaderData()
-
     const axiosPublic = UseAxiosPublic()
+    const { id } = useParams()
+    const { data: featured, refetch } = useQuery({
+        queryKey: ['featured', id],
+        queryFn: async () => {
+            const res = await axiosPublic.get(`/featured/${id}`)
+            return res.data
+        }
+    })
 
     // console.log(_id)
 
@@ -28,6 +35,7 @@ const DisplayFeaturedDetail = () => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
+                            refetch()
                         }
                     })
             }
@@ -37,23 +45,23 @@ const DisplayFeaturedDetail = () => {
     // const 
     return (
         <div className="card flex flex-row gap-10 justify-center w-[70%] p-10 my-20 mx-auto shadow-xl">
-            <img className='h-[300px] w-[300px] mx-auto' src={image} alt="" />
+            <img className='h-[300px] w-[300px] mx-auto' src={featured?.image} alt="" />
             <div className="card-body mt-5">
-                <h2 className="text-2xl font-bold ">{name}</h2>
+                <h2 className="text-2xl font-bold ">{featured?.name}</h2>
                 <div className='flex items-center font-semibold text-sm'>
-                    <p>{brand}</p>
-                    <p>{upload_date}</p>
+                    <p>{featured?.brand}</p>
+                    <p>{featured?.upload_date}</p>
                 </div>
-                <h2 className="text-lg">Votes: <span className="font-bold">{upvote}</span></h2>
+                <h2 className="text-lg">Votes: <span className="font-bold">{featured?.upvote}</span></h2>
                 <hr className='text-black text-lg my-4 border border-black' />
                 <div className='flex items-center w-fit gap-4'>
-                    <p>#{tags[0]}</p>
-                    <p>#{tags[1]}</p>
-                    <p>#{tags[2]}</p>
+                    <p>#{featured?.tags[0]}</p>
+                    <p>#{featured?.tags[1]}</p>
+                    <p>#{featured?.tags[2]}</p>
                 </div>
                 <div className="my-3">
                     {
-                        reported ? <button className="btn btn-outline text-red-500">Already Reported</button> : <button onClick={() => handleReport(_id)} className="btn btn-outline text-red-500">Report</button>
+                        featured?.reported ? <button className="btn btn-outline text-red-500">Already Reported</button> : <button onClick={() => handleReport(featured?._id)} className="btn btn-outline text-red-500">Report</button>
                     }
 
                 </div>
