@@ -3,33 +3,58 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
     // const { user } = UseAuth()
+    const moderator = true
 
     const ulLInk = <>
-        <li> <NavLink
-            to="/dashboard/myProfile"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            My Profile
-        </NavLink></li>
+        {
+            moderator ?
+                < >
+                    <li> <NavLink
+                        to="/dashboard/productReviewQueue"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        Product Review Queue
+                    </NavLink></li>
+                    <li> <NavLink
+                        to="/dashboard/reportedContents"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        Reported Contents
+                    </NavLink></li>
+                </>
+                :
+                < >
+                    <li> <NavLink
+                        to="/dashboard/myProfile"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        My Profile
+                    </NavLink></li>
+                    <li> <NavLink
+                        to="/dashboard/addProducts"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        Add Products
+                    </NavLink></li>
+                    <li> <NavLink
+                        to="/dashboard/myProducts"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        My Products
+                    </NavLink></li>
+                </>
+        }
 
-        <li> <NavLink
-            to="/dashboard/addProducts"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            Add Products
-        </NavLink></li>
-        <li> <NavLink
-            to="/dashboard/myProducts"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            My Products
-        </NavLink></li>
         <li> <NavLink
             to="/"
             className={({ isActive, isPending }) =>
