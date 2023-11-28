@@ -3,10 +3,11 @@ import UseMyProducts from "../../../Hooks/useMyProducts/UseMyProducts";
 import SectionTittle from "../../../Shared/SectionTittle/SectionTittle";
 import { FaTrash, FaPen } from "react-icons/fa";
 import UseAxiosSecure from "../../../Hooks/AxiosSecure/UseAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const MyProducts = () => {
-    const [myProducts,refetch] = UseMyProducts()
+    const [myProducts, refetch] = UseMyProducts()
     const axiosSecure = UseAxiosSecure()
 
 
@@ -25,12 +26,12 @@ const MyProducts = () => {
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
-                                    title: "Deleted!",
-                                    text: "Your file has been deleted.",
-                                    icon: "success"
-                                });
-                                refetch()
-                            }
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            refetch()
+                        }
                     })
             }
         });
@@ -62,7 +63,7 @@ const MyProducts = () => {
                                 <td>{item.name}</td>
                                 <td>{item.upvote}</td>
                                 <td>{item.status}</td>
-                                <td><button className="btn"><FaPen></FaPen></button></td>
+                                <td><Link to={`/dashboard/updateMyProduct/${item._id}`}><button className="btn"><FaPen></FaPen></button></Link></td>
                                 <td><button onClick={() => handleDelete(item._id)} className="btn text-rose-600"><FaTrash></FaTrash></button></td>
                             </tr>)
                         }

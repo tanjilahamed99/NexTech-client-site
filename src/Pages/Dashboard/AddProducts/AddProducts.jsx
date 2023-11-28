@@ -10,8 +10,8 @@ const AddProducts = () => {
     const axiosPublic = UseAxiosPublic()
     const newDate = new Date()
     const { register, handleSubmit } = useForm()
+    
     const onSubmit = (data) => {
-
         const addProductsData = {
             userName: user.displayName,
             userPhoto: user.photoURL,
