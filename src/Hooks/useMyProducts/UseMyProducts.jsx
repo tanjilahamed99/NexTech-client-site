@@ -6,7 +6,7 @@ const UseMyProducts = () => {
     const { user } = UseAuth()
     const axiosSecure = UseAxiosSecure()
 
-    const { data: myProducts = [] } = useQuery({
+    const { data: myProducts = [],refetch } = useQuery({
         queryKey: ['myProducts'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/featuredEmail/${user.email}`)
@@ -14,7 +14,7 @@ const UseMyProducts = () => {
         }
     })
 
-    return [myProducts]
+    return [myProducts,refetch]
 };
 
 export default UseMyProducts;
