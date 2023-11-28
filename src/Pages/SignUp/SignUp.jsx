@@ -23,20 +23,25 @@ const SignUp = () => {
                 updateProfile(auth.currentUser, {
                     displayName: data.name, photoURL: data.photo
                 }).then(() => {
-                    Swal.fire({
-                        icon: "success",
-                        title: "account created",
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
                     const userData = {
                         name: data.name,
                         email: data.email,
-                        status: false
+                        status: false,
+                        isAdmin: false,
+                        isModerator: false
                     }
                     axiosPublic.post('/users', userData)
-                        .then(res => console.log(res.data))
-                    navigate('/')
+                        .then(res => {
+                            if (res.data) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "account created",
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                navigate('/')
+                            }
+                        })
                 })
             })
             .catch(error => {

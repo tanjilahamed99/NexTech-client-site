@@ -15,6 +15,7 @@ import Payment from "../Pages/Dashboard/payment/Payment";
 import UpdateMyProducts from "../Pages/Dashboard/updateMyProducts/UpdateMyProducts";
 import ProductQueue from "../Pages/Dashboard/ProductsQueue/ProductQueue";
 import ReportedProducts from "../Pages/Dashboard/ReportedProducts/ReportedProducts";
+import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
 
 const Routes = createBrowserRouter([
     {
@@ -80,6 +81,12 @@ const Routes = createBrowserRouter([
             {
                 path: '/dashboard/reportedContents',
                 element: <PrivateRoutes><ReportedProducts></ReportedProducts></PrivateRoutes>
+            },
+
+            // admin
+            {
+                path: '/dashboard/allUsers',
+                element: <PrivateRoutes><AllUsers></AllUsers></PrivateRoutes>
             },
         ]
     },
