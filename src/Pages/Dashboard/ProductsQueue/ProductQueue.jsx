@@ -101,7 +101,7 @@ const ProductQueue = () => {
                                     }
 
                                     {
-                                        item.status === 'rejected' ? <td>Rejected</td> : <td onClick={() => handleReject(item._id)}><FaCross className=" text-xl font-bold text-red-600"></FaCross></td>
+                                        item.status === 'rejected' ? <td className="text-red-500 text-bold">Rejected</td> : <td onClick={() => handleReject(item._id)}><FaCross className=" text-xl font-bold text-red-600"></FaCross></td>
                                     }
                                 </tr>)
                             }
