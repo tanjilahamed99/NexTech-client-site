@@ -19,6 +19,7 @@ import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
 import IsAdmin from "./IsAdmin";
 import IsModerator from "./isModerator";
 import ErrorPage from "../Pages/404Page/ErrorPage";
+import Statistic from "../Pages/Dashboard/Statistic/Statistic";
 
 const Routes = createBrowserRouter([
     {
@@ -92,6 +93,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/dashboard/allUsers',
                 element: <IsAdmin><AllUsers></AllUsers></IsAdmin>
+            },
+            {
+                path: '/dashboard/statistic',
+                element: <IsAdmin><Statistic></Statistic></IsAdmin>
             },
         ]
     },

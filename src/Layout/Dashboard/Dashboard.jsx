@@ -17,6 +17,14 @@ const Dashboard = () => {
                     >
                         All users
                     </NavLink></li>
+                    <li> <NavLink
+                        to="/dashboard/Statistic"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        Statistic
+                    </NavLink></li>
                 </>
                 :
                 userRole?.moderator ?
