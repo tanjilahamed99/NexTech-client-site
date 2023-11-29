@@ -3,12 +3,12 @@ import UseAxiosPublic from "../AxiosPublic/UseAxiosPublic";
 
 const useFeatured = () => {
 
-    const axiosPublic = UseAxiosPublic()
+    const axiosSecure = UseAxiosPublic()
 
     const { data: featuredData = [],refetch } = useQuery({
         queryKey: ['featured'],
         queryFn: async () => {
-            const res = await axiosPublic('/featured')
+            const res = await axiosSecure('/featured')
             return res.data
         }
     })

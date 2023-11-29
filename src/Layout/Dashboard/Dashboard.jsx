@@ -1,14 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../../Hooks/userAdmin/useAdmin";
 // import UseAuth from "../../Hooks/useAuth/UseAuth";
 
 const Dashboard = () => {
-    // const { user } = UseAuth()
-    const moderator = true
-    const isAdmin = true
+    const [userRole] = useAdmin()
 
     const ulLInk = <>
         {
-            isAdmin ?
+            userRole?.isAdmin ?
                 <>
                     <li> <NavLink
                         to="/dashboard/allUsers"
@@ -20,7 +19,7 @@ const Dashboard = () => {
                     </NavLink></li>
                 </>
                 :
-                moderator ?
+                userRole?.moderator ?
                     <>
                         < li > <NavLink
                             to="/dashboard/productReviewQueue"
@@ -80,7 +79,7 @@ const Dashboard = () => {
     </>
 
     return (
-        <div className="container mx-auto gap-20 py-5 flex">
+        <div className="container mx-auto gap-20 py-5 flex flex-col md:flex-row">
             <div className="bg-gray-500 h-[100vh] p-10">
                 <h2 className="text-2xl font-bold mb-10 text-white">DashBoard</h2>
                 <ul className="text-bold  space-y-2 text-white">

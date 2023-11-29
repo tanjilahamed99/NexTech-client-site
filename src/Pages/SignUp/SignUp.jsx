@@ -10,7 +10,7 @@ import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
 
 
 const SignUp = () => {
-    const { createUser } = UseAuth()
+    const { createUser, googleLogin } = UseAuth()
     const [see, setSee] = useState(false)
     const navigate = useNavigate()
     const axiosPublic = UseAxiosPublic()
@@ -42,6 +42,40 @@ const SignUp = () => {
                                 navigate('/')
                             }
                         })
+                })
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
+    }
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                const userData = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    status: false,
+                    isAdmin: false,
+                    isModerator: false
+                }
+                axiosPublic.post('/users', userData)
+                .then(res => {
+                    if (res.data) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "account created",
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate('/')
+                    }
                 })
             })
             .catch(error => {
@@ -98,6 +132,7 @@ const SignUp = () => {
                         </div>
                         <p className=" text-white">Already have account <Link className="font-bold" to={'/login'}>Login</Link></p>
                     </form>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline text-white mt-4 w-fit ml-10">Google</button>
                 </div>
             </div>
         </div>

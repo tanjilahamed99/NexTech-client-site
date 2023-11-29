@@ -16,11 +16,15 @@ import UpdateMyProducts from "../Pages/Dashboard/updateMyProducts/UpdateMyProduc
 import ProductQueue from "../Pages/Dashboard/ProductsQueue/ProductQueue";
 import ReportedProducts from "../Pages/Dashboard/ReportedProducts/ReportedProducts";
 import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
+import IsAdmin from "./IsAdmin";
+import IsModerator from "./isModerator";
+import ErrorPage from "../Pages/404Page/ErrorPage";
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -51,6 +55,7 @@ const Routes = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             // normal user dashboard
             {
@@ -76,17 +81,17 @@ const Routes = createBrowserRouter([
             // Moderator
             {
                 path: '/dashboard/productReviewQueue',
-                element: <PrivateRoutes><ProductQueue></ProductQueue></PrivateRoutes>
+                element: <IsModerator><ProductQueue></ProductQueue></IsModerator>
             },
             {
                 path: '/dashboard/reportedContents',
-                element: <PrivateRoutes><ReportedProducts></ReportedProducts></PrivateRoutes>
+                element: <IsModerator><ReportedProducts></ReportedProducts></IsModerator>
             },
 
             // admin
             {
                 path: '/dashboard/allUsers',
-                element: <PrivateRoutes><AllUsers></AllUsers></PrivateRoutes>
+                element: <IsAdmin><AllUsers></AllUsers></IsAdmin>
             },
         ]
     },

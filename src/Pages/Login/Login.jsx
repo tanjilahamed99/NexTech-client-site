@@ -4,19 +4,54 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../Hooks/useAuth/UseAuth";
 import Swal from "sweetalert2";
+import UseAxiosPublic from "../../Hooks/AxiosPublic/UseAxiosPublic";
 
 const Login = () => {
 
     const [see, setSee] = useState(false)
-    const { loginUser } = UseAuth()
+    const { loginUser, googleLogin } = UseAuth()
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location)
+    const axiosPublic = UseAxiosPublic()
 
     const { register, handleSubmit } = useForm()
 
     const onSubmit = (data) => {
         loginUser(data.email, data.password)
+            .then((result) => {
+                const userData = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    status: false,
+                    isAdmin: false,
+                    isModerator: false
+                }
+                axiosPublic.post('/users', userData)
+                    .then(res => {
+                        if (res.data) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "account created",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            navigate('/')
+                        }
+                    })
+            })
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Cool'
+                })
+            })
+    }
+
+
+    const handleGoogleLogin = () => {
+        googleLogin()
             .then(() => {
                 Swal.fire({
                     icon: "success",
@@ -67,6 +102,7 @@ const Login = () => {
                         </div>
                         <p className=" text-white">New here <Link className="font-bold" to={'/signUp'}>Create Account</Link></p>
                     </form>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline text-white mt-4 w-fit ml-10">Google</button>
                 </div>
             </div>
         </div>

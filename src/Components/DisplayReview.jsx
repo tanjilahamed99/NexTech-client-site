@@ -5,7 +5,7 @@ const DisplayReview = ({ review }) => {
     const { featuredName, userName, userPhoto, rating, desc } = review
     return (
         <div>
-            <div className="card w-96  bg-base-100 shadow-xl">
+            <div className="card   bg-base-100 shadow-xl">
                 <div className='flex pl-5 gap-2 items-center'>
                     <div className="avatar">
                         <div className="w-20 rounded-full">
@@ -25,7 +25,6 @@ const DisplayReview = ({ review }) => {
                 <div className="card-body">
                     <p className='font-bold text-xl'>{featuredName}</p>
                     <p>{desc}</p>
-
                 </div>
             </div>
         </div>
