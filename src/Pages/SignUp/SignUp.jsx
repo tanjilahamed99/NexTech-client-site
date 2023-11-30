@@ -32,6 +32,7 @@ const SignUp = () => {
                     }
                     axiosPublic.post('/users', userData)
                         .then(res => {
+                            console.log(res.data)
                             if (res.data) {
                                 Swal.fire({
                                     icon: "success",
@@ -66,17 +67,17 @@ const SignUp = () => {
                     isModerator: false
                 }
                 axiosPublic.post('/users', userData)
-                .then(res => {
-                    if (res.data) {
-                        Swal.fire({
-                            icon: "success",
-                            title: "account created",
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        navigate('/')
-                    }
-                })
+                    .then(res => {
+                        if (res.data) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "account created",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            navigate('/')
+                        }
+                    })
             })
             .catch(error => {
                 Swal.fire({
@@ -91,11 +92,11 @@ const SignUp = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 w-full flex py-10 bg-center bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/rtZg3TP/biotech-platform-static-banner.jpg)' }}>
-            <div className="w-1/2">
+            <div className="lg:w-1/2">
                 <div className="text-center text-white">
                     <h1 className="text-5xl font-bold">Sign up</h1>
                 </div>
-                <div className=" w-[80%] mx-auto my-5 shadow-2xl">
+                <div className=" lg:w-[80%] w-full mx-auto my-5 shadow-2xl">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">

@@ -19,7 +19,7 @@ const useTrending = () => {
 
     const handlePage = (i) => {
         setPage(i)
-        refetch()
+        // refetch()
     }
     const onSubmit = (data) => {
         setSearch(data.search)

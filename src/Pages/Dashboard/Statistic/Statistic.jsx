@@ -28,7 +28,7 @@ const Statistic = () => {
 
 
     return (
-        <div className='w-full'>
+        <div className=''>
             <PieChart className='w-full' width={800} height={400}>
                 <Pie
                     data={data}

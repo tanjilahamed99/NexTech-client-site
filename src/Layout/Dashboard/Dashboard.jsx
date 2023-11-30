@@ -5,9 +5,12 @@ import useAdmin from "../../Hooks/userAdmin/useAdmin";
 const Dashboard = () => {
     const [userRole] = useAdmin()
 
-    const ulLInk = <>
+    console.log(userRole)
+
+    const ulLInk = 
+    <>
         {
-            userRole?.isAdmin ?
+            userRole?.admin ?
                 <>
                     <li> <NavLink
                         to="/dashboard/allUsers"
@@ -24,6 +27,14 @@ const Dashboard = () => {
                         }
                     >
                         Statistic
+                    </NavLink></li>
+                    <li> <NavLink
+                        to="/dashboard/manageCoupon"
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-500" : ""
+                        }
+                    >
+                        Manage Coupon
                     </NavLink></li>
                 </>
                 :
@@ -88,7 +99,7 @@ const Dashboard = () => {
 
     return (
         <div className="container mx-auto gap-20 py-5 flex flex-col md:flex-row">
-            <div className="bg-gray-500 h-[100vh] p-10">
+            <div className="bg-gray-500 h-screen p-10">
                 <h2 className="text-2xl font-bold mb-10 text-white">DashBoard</h2>
                 <ul className="text-bold  space-y-2 text-white">
                     {

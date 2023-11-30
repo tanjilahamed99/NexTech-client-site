@@ -45,40 +45,40 @@ const UpdateMyProducts = () => {
 
     return (
         <div className="w-full">
-            <form onSubmit={handleSubmitO} className="grid my-10 w-full grid-cols-2 items-center justify-center mx-auto gap-10">
-                <div className="w-full mx-auto">
+            <form onSubmit={handleSubmitO} className="grid  grid-cols-1 my-10 w-full md:grid-cols-2 items-center justify-center md:mx-auto gap-10">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Name</h2>
                     <input type="text" placeholder="Type here" className="input input-bordered w-full" value={featured?.userName} disabled />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Photo</h2>
                     <input type="text" placeholder="Type here" className="input input-bordered w-full" value={featured?.userPhoto} disabled />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%]  mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Email</h2>
                     <input type="text" placeholder="Type here" className="input input-bordered w-full" disabled value={featured?.userEmail} />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Product Name</h2>
                     <input name="productName" defaultValue={featured?.name} type="text" placeholder="Type here" className="input input-bordered w-full" />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">product Photo</h2>
                     <input name="productPhoto" type="text" placeholder="Type here" className="input input-bordered w-full" defaultValue={featured?.image} required />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Brand</h2>
                     <input name="brand" type="text" placeholder="Type here" className="input input-bordered w-full" defaultValue={featured?.brand} required />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Tags</h2>
                     <input name="tags" type="text" placeholder="Type here" className="input input-bordered w-full" defaultValue={featured?.tags} required />
                 </div>
-                <div className="w-full mx-auto">
+                <div className="md:w-full w-[90%] mx-auto col-span-2 md:col-span-1">
                     <h2 className="font-bold text-sm mb-2">Description</h2>
                     <textarea name="desc" className="textarea textarea-bordered w-full" placeholder="Bio" defaultValue={featured?.desc} required></textarea>
                 </div>
-                <input type="submit" value={'Submit'} placeholder="Type here" className="input col-span-2 btn-outline input-bordered w-full mx-auto" />
+                <input type="submit" value={'Submit'} placeholder="Type here" className="input col-span-2 btn-outline input-bordered md:w-full w-[90%] mx-auto" />
             </form>
         </div>
     );

@@ -6,14 +6,16 @@ import { Navigate } from 'react-router-dom';
 const IsModerator = ({ children }) => {
     const [useRole, isLoading] = useAdmin()
     const { user, loading } = UseAuth()
+    console.log(useRole)
 
     if (loading || isLoading) {
         return <span className="loading loading-spinner loading-lg"></span>
     }
 
-    if (useRole?.isModerator && user) {
+    if (useRole?.moderator && user) {
         return children
-    } else {
+    }
+    else {
         return <Navigate to={'/'}></Navigate>
     }
 

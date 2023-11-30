@@ -20,6 +20,7 @@ import IsAdmin from "./IsAdmin";
 import IsModerator from "./isModerator";
 import ErrorPage from "../Pages/404Page/ErrorPage";
 import Statistic from "../Pages/Dashboard/Statistic/Statistic";
+import ManageCoupon from "../Pages/Dashboard/ManageCoupon/ManageCoupon";
 
 const Routes = createBrowserRouter([
     {
@@ -97,6 +98,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/dashboard/statistic',
                 element: <IsAdmin><Statistic></Statistic></IsAdmin>
+            },
+            {
+                path: '/dashboard/manageCoupon',
+                element: <IsAdmin><ManageCoupon></ManageCoupon></IsAdmin>
             },
         ]
     },

@@ -35,7 +35,7 @@ const Login = () => {
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            navigate('/')
+                            location.state ? navigate(location.state) : navigate('/')
                         }
                     })
             })
@@ -52,14 +52,26 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(() => {
-                Swal.fire({
-                    icon: "success",
-                    title: "successful login",
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                location.state ? navigate(location.state) : navigate('/')
+            .then((result) => {
+                const userData = {
+                    name: result?.user?.displayName,
+                    email: result?.user?.email,
+                    status: false,
+                    isAdmin: false,
+                    isModerator: false
+                }
+                axiosPublic.post('/users', userData)
+                    .then(res => {
+                        if (res.data) {
+                            Swal.fire({
+                                icon: "success",
+                                title: "account created",
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            location.state ? navigate(location.state) : navigate('/')
+                        }
+                    })
             })
             .catch(error => {
                 Swal.fire({
@@ -73,11 +85,11 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 w-full flex" style={{ backgroundImage: 'url(https://i.ibb.co/rtZg3TP/biotech-platform-static-banner.jpg)' }}>
-            <div className="w-1/2">
+            <div className="lg:w-1/2">
                 <div className="text-center text-white">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                 </div>
-                <div className=" w-[80%] mx-auto my-5 shadow-2xl">
+                <div className=" lg:w-[80%] mx-auto my-5 shadow-2xl">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
