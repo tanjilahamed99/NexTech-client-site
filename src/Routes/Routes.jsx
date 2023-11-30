@@ -21,6 +21,7 @@ import IsModerator from "./isModerator";
 import ErrorPage from "../Pages/404Page/ErrorPage";
 import Statistic from "../Pages/Dashboard/Statistic/Statistic";
 import ManageCoupon from "../Pages/Dashboard/ManageCoupon/ManageCoupon";
+import UpdateCoupon from "../Pages/Dashboard/UpdateCoupon/UpdateCoupon";
 
 const Routes = createBrowserRouter([
     {
@@ -102,6 +103,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/dashboard/manageCoupon',
                 element: <IsAdmin><ManageCoupon></ManageCoupon></IsAdmin>
+            },
+            {
+                path: '/dashboard/updateCoupon/:id',
+                element: <IsAdmin><UpdateCoupon></UpdateCoupon></IsAdmin>
             },
         ]
     },

@@ -4,6 +4,7 @@ import UseAxiosSecure from "../../../Hooks/AxiosSecure/UseAxiosSecure";
 import Swal from "sweetalert2";
 import useAllCoupon from "../../../Hooks/useAllCoupons/useAllCoupon";
 import { FaPen, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ManageCoupon = () => {
     const { register, handleSubmit, reset } = useForm()
@@ -24,7 +25,7 @@ const ManageCoupon = () => {
                         title: "coupon created",
                         showConfirmButton: false,
                         timer: 1500
-                    });
+                    })
                     refetch()
                     reset()
                 }
@@ -87,7 +88,7 @@ const ManageCoupon = () => {
                                 <td>{item.couponCode}</td>
                                 <td>{item.expiryDate}</td>
                                 <td>{item.discountAmount}</td>
-                                <td><FaPen className="text-xl"></FaPen></td>
+                                <td><Link to={`/dashboard/updateCoupon/${item._id}`}><FaPen className="text-xl"></FaPen></Link></td>
                                 <td onClick={() => handleDeleteCoupon(item._id)}><FaTrash className="text-red-600 text-xl"> </FaTrash></td>
                             </tr>)
                         }
