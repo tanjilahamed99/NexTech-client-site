@@ -1,3 +1,8 @@
+
+ 
+ # live link : https://nextech-4bdaf.web.app
+
+
 # NexTech five feature
 - firebase Authentication added for login and registration
 - Featured and trending data display from mongodb 
