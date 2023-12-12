@@ -22,6 +22,7 @@ import ErrorPage from "../Pages/404Page/ErrorPage";
 import Statistic from "../Pages/Dashboard/Statistic/Statistic";
 import ManageCoupon from "../Pages/Dashboard/ManageCoupon/ManageCoupon";
 import UpdateCoupon from "../Pages/Dashboard/UpdateCoupon/UpdateCoupon";
+import Bookmark from "../Pages/Dashboard/Bookmark/Bookmark";
 
 const Routes = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/dashboard/updateMyProduct/:id',
                 element: <PrivateRoutes><UpdateMyProducts></UpdateMyProducts></PrivateRoutes>
+            },
+            {
+                path: '/dashboard/bookmark',
+                element: <PrivateRoutes><Bookmark></Bookmark></PrivateRoutes>
             },
             {
                 path: '/dashboard/payment',

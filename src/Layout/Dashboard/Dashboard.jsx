@@ -83,6 +83,15 @@ const Dashboard = () => {
                         >
                             My Products
                         </NavLink></li>
+
+                        <li> <NavLink
+                            to="/dashboard/bookmark"
+                            className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-red-500" : ""
+                            }
+                        >
+                            My Bookmark
+                        </NavLink></li>
                     </>
         }
 
