@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-// import useTrending from '../../Hooks/useTrending/useTrending';
 import SectionBanner from '../../Shared/sectionBanner/SectionBanner';
 import DisplayTrending from '../Home/Trending/DisplayTrending';
 import UseAxiosPublic from '../../Hooks/AxiosPublic/UseAxiosPublic';
 import { useForm } from 'react-hook-form';
 
 const Products = () => {
-    // const [trending, , handlePage, onSubmit] = useTrending()
     const axiosPublic = UseAxiosPublic()
     const [totalTrending, setTotalTrending] = useState(0)
     const { register, handleSubmit } = useForm()

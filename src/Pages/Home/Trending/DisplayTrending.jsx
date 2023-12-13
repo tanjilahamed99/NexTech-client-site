@@ -16,7 +16,6 @@ const DisplayTrending = ({ trendingData }) => {
     const navigate = useNavigate()
     const [vote, setVote] = useState(false)
 
-
     const handleVote = () => {
         if (user) {
             axiosPublic.patch(`/trending?id=${_id}&upVote=${upVote}`)

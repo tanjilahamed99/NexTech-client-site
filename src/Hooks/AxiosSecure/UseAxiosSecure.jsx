@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import UseAuth from "../useAuth/UseAuth";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000'
+    // baseURL: 'http://localhost:5000'
     // baseURL: 'https://nextech-server.vercel.app'
+    baseURL: 'https://nextech-server.vercel.app'
+
 })
 
 const UseAxiosSecure = () => {
