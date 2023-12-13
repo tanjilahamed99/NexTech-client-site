@@ -49,7 +49,8 @@ const DisplayFeatured = ({ featured }) => {
 
         axiosPublic.post('/bookmark', bookmarkData)
             .then(res => {
-                if (res.data) {
+                // console.log(res.data && )
+                if (res.data && !res.data.Already) {
                     Swal.fire({
                         icon: "success",
                         title: "Bookmarked Added",
@@ -57,6 +58,14 @@ const DisplayFeatured = ({ featured }) => {
                         timer: 1500
                     })
                     setBookmark(true)
+                }
+                else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Already have',
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                    })
                 }
             })
 
