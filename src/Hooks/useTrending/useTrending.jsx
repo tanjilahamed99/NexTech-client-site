@@ -3,8 +3,8 @@ import { useState } from "react"
 import UseAxiosPublic from "../AxiosPublic/UseAxiosPublic";
 
 const useTrending = () => {
-
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState()
+    // console.log(page)
     const [search, setSearch] = useState()
 
     const axiosSecure = UseAxiosPublic()

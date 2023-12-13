@@ -44,7 +44,7 @@ const CouponBanner = () => {
 
 
     return (
-        <div ref={sliderRef} className="keen-slider my-20">
+        <div data-aos="zoom-in" ref={sliderRef} className="keen-slider my-20">
             {
                 coupon?.map(item => <div key={item._id} className="keen-slider__slide bg-cover bg-opacity-50 bg-fixed bg-center number-slide2 w-full h-[50vh] image-full hero"
                     style={{ backgroundImage: 'url(https://i.ibb.co/brfPFyZ/images-4.jpg)' }}

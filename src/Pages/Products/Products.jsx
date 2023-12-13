@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react';
-import useTrending from '../../Hooks/useTrending/useTrending';
+// import useTrending from '../../Hooks/useTrending/useTrending';
 import SectionBanner from '../../Shared/sectionBanner/SectionBanner';
 import DisplayTrending from '../Home/Trending/DisplayTrending';
 import UseAxiosPublic from '../../Hooks/AxiosPublic/UseAxiosPublic';
 import { useForm } from 'react-hook-form';
 
 const Products = () => {
-    const [trending, , handlePage,onSubmit] = useTrending()
+    // const [trending, , handlePage, onSubmit] = useTrending()
     const axiosPublic = UseAxiosPublic()
     const [totalTrending, setTotalTrending] = useState(0)
     const { register, handleSubmit } = useForm()
+    const [trending, setTrending] = useState([])
+    const [search, setSearch] = useState()
+    const [pageShow, setPageShow] = useState()
+
 
     const maxItem = 20
 
@@ -17,6 +21,13 @@ const Products = () => {
         axiosPublic('/trendingData')
             .then(res => setTotalTrending(res.data.total))
     }, [axiosPublic])
+
+
+    useEffect(() => {
+        axiosPublic.get(`/trending?page=${pageShow}&search=${search}`)
+            .then(res => setTrending(res.data))
+    }, [axiosPublic, pageShow, search])
+
 
     const totalPage = Math.ceil(totalTrending / maxItem)
 
@@ -26,6 +37,10 @@ const Products = () => {
         page.push(index)
     }
 
+
+    const onSubmit = (data) => {
+        setSearch(data.search)
+    }
 
 
     return (
@@ -44,7 +59,7 @@ const Products = () => {
             </div>
             <div className="join flex justify-center mb-5 gap-5">
                 {
-                    page?.map(item => <button onClick={() => handlePage(item)} className='btn btn-active hover:btn' key={item} >{item}</button>)
+                    page?.map(item => <button onClick={() => setPageShow(item)} className='btn btn-active hover:btn' key={item} >{item}</button>)
                 }
             </div>
         </div>
