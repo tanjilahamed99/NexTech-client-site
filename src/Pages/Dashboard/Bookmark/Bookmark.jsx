@@ -8,7 +8,7 @@ const Bookmark = () => {
     const axiosPublic = UseAxiosPublic()
 
     const [bookmark,refetch] = DisplayBookmark()
-    console.log(bookmark)
+    // console.log(bookmark)
 
     const handleDelete = (id) => {
         Swal.fire({

@@ -44,31 +44,33 @@ const DisplayFeatured = ({ featured }) => {
     }
 
     const handleBookMark = () => {
+        if (user) {
+            const bookmarkData = { name, brand, image, upload_date, upvote, tags, productsId: _id, email: user?.email, userName: user.displayName }
+            axiosPublic.post('/bookmark', bookmarkData)
+                .then(res => {
+                    // console.log(res.data && )
+                    if (res.data && !res.data.Already) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "Bookmarked Added",
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        setBookmark(true)
+                    }
+                    else {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Already have',
+                            icon: 'error',
+                            confirmButtonText: 'Cool'
+                        })
+                    }
+                })
 
-        const bookmarkData = { name, brand, image, upload_date, upvote, tags, productsId: _id, email: user?.email, userName: user.displayName }
-
-        axiosPublic.post('/bookmark', bookmarkData)
-            .then(res => {
-                // console.log(res.data && )
-                if (res.data && !res.data.Already) {
-                    Swal.fire({
-                        icon: "success",
-                        title: "Bookmarked Added",
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    setBookmark(true)
-                }
-                else {
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'Already have',
-                        icon: 'error',
-                        confirmButtonText: 'Cool'
-                    })
-                }
-            })
-
+        } else {
+            return navigate('/login')
+        }
     }
 
 
