@@ -10,7 +10,7 @@ const Featured = () => {
     return (
         <div data-aos="fade-right" className="my-20">
             <SectionTittle subTittle={"Latest"} tittle={"Featured Products"}></SectionTittle>
-            <div className="grid grid-cols-1  flex-grow md:grid-cols-2 mx-5 lg:grid-cols-3 items-center gap-10 mt-5">
+            <div className="grid grid-cols-1  md:grid-cols-2 mx-5 lg:grid-cols-3 items-center gap-6 xl:gap-10 mt-5">
                 {
                     featuredData.map(featured => <DisplayFeatured key={featured._id} featured={featured}></DisplayFeatured>)
                 }

@@ -1,4 +1,5 @@
 import AboutBAnner from "./AboutBAnner";
+import ContactAbout from "./ContactAbout";
 import OurTeam from "./OurTeam";
 
 const About = () => {
@@ -6,6 +7,7 @@ const About = () => {
         <div className="py-20">
             <AboutBAnner></AboutBAnner>
             <OurTeam></OurTeam>
+            <ContactAbout></ContactAbout>
         </div>
     );
 };
