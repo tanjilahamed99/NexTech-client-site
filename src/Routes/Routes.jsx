@@ -23,6 +23,8 @@ import Statistic from "../Pages/Dashboard/Statistic/Statistic";
 import ManageCoupon from "../Pages/Dashboard/ManageCoupon/ManageCoupon";
 import UpdateCoupon from "../Pages/Dashboard/UpdateCoupon/UpdateCoupon";
 import Bookmark from "../Pages/Dashboard/Bookmark/Bookmark";
+import About from "../Pages/About/About";
+import Blog from "../Pages/Blog/Blog";
 
 const Routes = createBrowserRouter([
     {
@@ -45,6 +47,14 @@ const Routes = createBrowserRouter([
             {
                 path: '/trendingDetail/:id',
                 element: <PrivateRoutes><DisplayTrendingDetails></DisplayTrendingDetails></PrivateRoutes>
+            },
+            {
+                path: '/about',
+                element: <About></About>
+            },
+            {
+                path: '/blog',
+                element: <Blog />
             },
         ]
     },

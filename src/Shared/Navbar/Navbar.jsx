@@ -7,38 +7,48 @@ const Navbar = () => {
     const { user, logOut } = UseAuth()
 
     const ulLinks = <>
-        <li> <NavLink
-            to="/"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            Home
-        </NavLink></li>
-        <li> <NavLink
-            to="/products"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            About
-        </NavLink></li>
-        <li> <NavLink
-            to="/products"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            Blog
-        </NavLink></li>
-        <li> <NavLink
-            to="/products"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-red-500" : ""
-            }
-        >
-            Product
-        </NavLink></li>
+        <li>
+            <NavLink
+                to="/"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500" : ""
+                }
+            >
+                Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/products"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500" : ""
+                }
+            >
+                Product
+            </NavLink>
+        </li>
+        <li>
+            <NavLink
+                to="/about"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500" : ""
+                }
+            >
+                About
+            </NavLink>
+        </li>
+
+        <li>
+            <NavLink
+                to="/blog"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500" : ""
+                }
+            >
+                Blog
+            </NavLink>
+        </li>
+
 
         {
             !user && <li><Link to={'/login'}>Login</Link></li>

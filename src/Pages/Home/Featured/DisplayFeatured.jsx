@@ -75,7 +75,7 @@ const DisplayFeatured = ({ featured }) => {
 
 
     return (
-        <div className="card shadow-xl rounded-br-[100px] rounded-tl-[100px]  bg-gradient-to-r from-purple-100 to-blue-100 py-5">
+        <div className="card shadow-xl rounded-br-[100px] rounded-tl-[70px]  bg-gradient-to-r from-purple-100 to-blue-100 py-5">
             <img className='h-[300px] w-[300px] mx-auto rounded-2xl' src={image} alt="" />
             <div className="card-body">
                 <Link to={`/featuredDetail/${_id}`}>
