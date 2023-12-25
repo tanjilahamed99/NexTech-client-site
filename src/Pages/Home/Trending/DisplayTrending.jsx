@@ -41,8 +41,8 @@ const DisplayTrending = ({ trendingData }) => {
 
 
     return (
-        <div className="card shadow-xl">
-            <img className='h-[300px] w-[300px] mx-auto' src={image} alt="" />
+        <div className="card shadow-xl bg-gradient-to-r rounded-br-[100px] rounded-tl-[100px] from-purple-100 to-blue-100 py-5">
+            <img className='h-[300px] w-[300px] mx-auto rounded-2xl' src={image} alt="" />
             <div className="card-body">
                 <Link to={`/trendingDetail/${_id}`}>
                     <h2 className="text-lg font-bold ">{name}</h2>

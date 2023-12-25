@@ -43,7 +43,7 @@ const Products = () => {
 
     return (
         <div>
-            <SectionBanner subTittle={"Explore the latest in tech innovation. From AI-powered devices to robotics, discover futuristic gadgets shaping the future of technology"} title={"Products"}></SectionBanner>
+            <SectionBanner subTittle={"NexTech: Your portal to the future of tech. Explore, shop, and elevate your digital lifestyle with the latest innovations in gadgets and gear"} title={"Products"}></SectionBanner>
             <div>
                 <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center mt-10 gap-3'>
                     <input type="text" {...register("search")} placeholder="Type here" className="input border-2 input-bordered  w-[60%]" />

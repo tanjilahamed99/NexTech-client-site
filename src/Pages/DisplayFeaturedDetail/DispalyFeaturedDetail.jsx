@@ -80,8 +80,8 @@ const DisplayFeaturedDetail = () => {
     }
 
     return (
-        <div>
-            <div className="card flex flex-col md:flex-row gap-10 md:justify-center lg:w-[80%] xl:w-[70%] md:p-10 my-20 mx-auto shadow-xl w-full">
+        <div className="pt-32">
+            <div className="card flex flex-col md:flex-row gap-10 md:justify-center lg:w-[80%] xl:w-[70%] md:p-10 mb-20 mx-auto shadow-xl w-full">
                 <img className='h-[300px] w-[300px] mx-auto' src={featured?.image} alt="" />
                 <div className="card-body mt-5">
                     <h2 className="text-2xl font-bold ">{featured?.name}</h2>

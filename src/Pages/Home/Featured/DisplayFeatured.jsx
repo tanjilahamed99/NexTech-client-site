@@ -75,8 +75,8 @@ const DisplayFeatured = ({ featured }) => {
 
 
     return (
-        <div className="card shadow-xl">
-            <img className='h-[300px] w-[300px] mx-auto' src={image} alt="" />
+        <div className="card shadow-xl rounded-br-[100px] rounded-tl-[100px]  bg-gradient-to-r from-purple-100 to-blue-100 py-5">
+            <img className='h-[300px] w-[300px] mx-auto rounded-2xl' src={image} alt="" />
             <div className="card-body">
                 <Link to={`/featuredDetail/${_id}`}>
                     <h2 className="text-lg font-bold ">{name}</h2>
@@ -86,9 +86,9 @@ const DisplayFeatured = ({ featured }) => {
                     <p>{upload_date}</p>
                 </div>
                 <div className="card-actions mt-3 flex justify-between items-center">
-                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl'><IoTriangleSharp className={vote ? 'text-red-600' : 'text-black'}></IoTriangleSharp>{upvote}</button>
+                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl '><IoTriangleSharp className={vote ? 'text-red-600' : 'text-black'}></IoTriangleSharp>{upvote}</button>
 
-                    <button disabled={bookmark} onClick={handleBookMark} className='btn btn-sm btn-outline text-xl'><FaBookmark className={bookmark && 'text-yellow-600'}></FaBookmark></button>
+                    <button disabled={bookmark} onClick={handleBookMark} className='btn btn-sm btn-outline text-xl '><FaBookmark className={bookmark ? 'text-yellow-600' : 'text-black' }></FaBookmark></button>
 
                 </div>
                 <hr className='text-black text-lg my-4 border border-black' />

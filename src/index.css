@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* body{
+    background-image: url('https://i.ibb.co/jz0rHDF/images-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */

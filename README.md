@@ -9,6 +9,6 @@
 - there was a role base rendering
 - normal user add any products,delete,update own products
 - user report any products
-- moderator approved normal user products reported product 
+- moderator saw all the reported product and delete this products also.
 - moderator approved normal user products 
 - admin see all the user and and there role and kame them admin or moderator
