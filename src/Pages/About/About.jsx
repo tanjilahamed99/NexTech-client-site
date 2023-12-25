@@ -1,7 +1,9 @@
+import AboutBAnner from "./AboutBAnner";
+
 const About = () => {
     return (
-        <div>
-            
+        <div className="py-20">
+            <AboutBAnner></AboutBAnner>
         </div>
     );
 };
