@@ -10,7 +10,7 @@ const OurTeam = () => {
                     <div className="text-white pt-10">
                         <SectionTittle subTittle={'Team'} tittle={'Our Team Members'}></SectionTittle>
                     </div>
-                    <div className="my-4  grid grid-cols-1 pb-20 pt-16 md:grid-rows-2  lg:grid-cols-3 items-center gap-10 bg-center bg-cover  bg-fixed">
+                    <div className="my-4 grid grid-cols-1 pb-20 pt-16 md:grid-cols-2  lg:grid-cols-3 items-center gap-10 bg-center bg-cover  bg-fixed">
                         <div className=" bg-opacity-60 bg-white p-5 mx-auto shadow-sm shadow-white rounded-2xl">
                             <div className="relative">
                                 <img className="w-[250px] h-[250px] mx-auto" src="https://i.ibb.co/5kzyH8G/pngwing-com-6.png" alt="" />

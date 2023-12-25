@@ -41,24 +41,28 @@ const DisplayTrending = ({ trendingData }) => {
 
 
     return (
-        <div className="card shadow-xl bg-gradient-to-r rounded-br-[100px] rounded-tl-[70px] from-purple-100 to-blue-100 py-5">
-            <img className='h-[300px] w-[300px] mx-auto rounded-2xl' src={image} alt="" />
-            <div className="card-body">
-                <Link to={`/trendingDetail/${_id}`}>
-                    <h2 className="text-lg font-bold ">{name}</h2>
+        <div className="card shadow-xl  py-5 rounded-br-[100px] rounded-tl-[70px]  bg-gradient-to-r from-purple-100 to-blue-100">
+            <img className='md:h-[250px] md:w-[250px] xl:h-[300px] xl:w-[300px] h-[200px] w-[200px] mx-auto rounded-2xl' src={image} alt="" />
+            <div className="p-5 lg:p-7">
+                <Link to={`/featuredDetail/${_id}`}>
+                    <h2 className=" font-bold ">{name}</h2>
                 </Link>
-                <div className='flex md:flex-row flex-col md:items-center font-semibold text-sm'>
-                    <p>{brand}</p>
-                    <p>{upload_date}</p>
+                <div className='flex md:flex-row  gap-3 mt-2 justify-between flex-col md:items-center font-semibold text-sm'>
+                    <p className='font-bold text-sm'>{brand}</p>
+                    <p>
+                        {
+                            upload_date.slice(0, 10)
+                        }
+                    </p>
                 </div>
-                <div className="card-actions mt-3">
-                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl'><IoTriangleSharp className={vote ? 'text-red-600' : 'text-black'}></IoTriangleSharp>{upVote}</button>
+                <div className="card-actions mt-3 flex justify-between items-center">
+                    <button onClick={handleVote} disabled={disabled} className='btn btn-sm btn-outline text-xl '><IoTriangleSharp className={vote ? 'text-red-600' : 'text-black'}></IoTriangleSharp>{upVote}</button>
+
                 </div>
                 <hr className='text-black text-lg my-4 border border-black' />
-                <div className='flex md:flex-row flex-col md:items-center w-fit gap-4'>
+                <div className='flex flex-col flex-wrap md:flex-row md:items-center w-fit md:gap-2 gap-2'>
                     <p>#{tags[0]}</p>
                     <p>#{tags[1]}</p>
-                    <p>#{tags[2]}</p>
                 </div>
             </div>
         </div>
