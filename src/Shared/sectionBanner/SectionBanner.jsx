@@ -4,7 +4,7 @@ const SectionBanner = ({title,subTittle}) => {
         <div className="hero h-[100vh] bg-fixed bg-cover bg-center rounded-lg" style={{ backgroundImage: 'url(https://i.ibb.co/Gndbxzn/images-1.jpg)' }}>
             <div className="hero-overlay bg-opacity-70"></div>
             <div className="hero-content text-center text-neutral-content">
-                <div className="w-[50%] mx-auto">
+                <div className="lg:w-[50%] mx-auto">
                     <h1 className="mb-5 text-5xl font-bold text-white">{title}</h1>
                     <p className="mb-5 text-white">{subTittle}</p>
                 </div>

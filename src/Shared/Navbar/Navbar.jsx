@@ -7,7 +7,7 @@ const Navbar = () => {
     const { user, logOut } = UseAuth()
 
     const ulLinks = <>
-        <li>
+        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
@@ -17,7 +17,7 @@ const Navbar = () => {
                 Home
             </NavLink>
         </li>
-        <li>
+        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/products"
                 className={({ isActive, isPending }) =>
@@ -27,7 +27,7 @@ const Navbar = () => {
                 Product
             </NavLink>
         </li>
-        <li>
+        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/about"
                 className={({ isActive, isPending }) =>
@@ -38,14 +38,14 @@ const Navbar = () => {
             </NavLink>
         </li>
 
-        <li>
+        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/blog"
                 className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-red-500" : ""
                 }
             >
-                Blog
+                
             </NavLink>
         </li>
 
@@ -87,7 +87,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar py-3 border-b-2 z-10  bg-opacity-30 bg-slate-950 container px-5">
+        <div className="navbar py-3 border-b-2 z-10 fixed  bg-opacity-30 bg-slate-950 container px-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden text-white">
