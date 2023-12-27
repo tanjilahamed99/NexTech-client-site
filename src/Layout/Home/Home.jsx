@@ -1,6 +1,7 @@
 import Banner from "../../Pages/Home/Banner/Banner"
 import CouponBanner from "../../Pages/Home/CouponBanner/CouponBanner";
 import Featured from "../../Pages/Home/Featured/Featured";
+import HomeAbout from "../../Pages/Home/HomeAbout/HomeAbout";
 import Trending from "../../Pages/Home/Trending/Trending";
 
 
@@ -11,6 +12,7 @@ const Home = () => {
             <Featured></Featured>
             <Trending></Trending>
             <CouponBanner></CouponBanner>
+            <HomeAbout></HomeAbout>
         </div>
     );
 };
