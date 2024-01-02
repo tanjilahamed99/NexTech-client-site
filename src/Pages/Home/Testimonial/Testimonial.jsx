@@ -1,6 +1,8 @@
 import SectionTittle from "../../../Shared/SectionTittle/SectionTittle";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Testimonial = () => {
 
@@ -13,22 +15,201 @@ const Testimonial = () => {
         },
     })
 
-    return (
-        <div className="my-20">
-            <SectionTittle subTittle={'Testimonials'} tittle={"Users Testimonials"}></SectionTittle>
-            <h2 className="text-3xl font-semibold mt-5 ">Users Say</h2>
-                
-            {/* <div  ref={sliderRef} className="keen-slider my-5">
-                <img className="keen-slider__slide number-slide1 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/FgJjZqx/paolo-nicolello-2g-Ox-Kj594n-M-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide2 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/Qfg12zw/edvin-johansson-rlw-E8f8an-Oc-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide3 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/svLmhK5/leisure-beautiful-health-garden-landscape.jpg" alt="" />
-                <img className="keen-slider__slide number-slide4 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/XF74Hc8/jason-briscoe-e-Lf-QTm-Df-Lk-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide5 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/JnYqKLK/tholaal-mohamed-8s-KTHe-Ggr-UM-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide6 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/nRV2Jzm/will-truettner-7-ZZ-Fm-Vel-QY-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide7 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/b5TJfCQ/david-hieb-n9-Qv-Thin-U0-unsplash.jpg" alt="" />
-                <img className="keen-slider__slide number-slide8 w-[200px] h-[200px] md:w-[300px] md:h-[300px]" src="https://i.ibb.co/tCGXdSd/kelsey-curtis-27u-Gzl-AFw-unsplash.jpg" alt="" />
-            </div> */}
 
+
+    return (
+        <div className="my-20 hidden lg:flex">
+            <div>
+                <SectionTittle subTittle={'Testimonials'} tittle={"Users Testimonials"}></SectionTittle>
+                <h2 className="text-xl font-semibold mt-5 ">Users Say</h2>
+
+                <div ref={sliderRef} className="keen-slider my-5">
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide1 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/4JWn5WV/pngwing-com-7.png" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide2 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/QPC8YhW/download-20.jpg" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Sujan Hassan</h2>
+                                <p className="text-sm font-bold">Backend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={5}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">10 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide3 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/SJt9DdP/download-21.jpg" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide4 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/0h9DYQZ/download-24.jpg" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide5 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/FxM49V3/download-22.jpg" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide6 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/wcSVKYj/pngwing-com-10.png" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide7 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/HPPcD6G/download-23.jpg" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                    <div className="shadow-lg p-5 keen-slider__slide number-slide8 ">
+                        <div className="flex items-center gap-4 ">
+                            <img className="w-20 h-20 rounded-full bg-purple-400" src="https://i.ibb.co/5kzyH8G/pngwing-com-6.png" alt="" />
+                            <div>
+                                <h2 className="text-2xl font-bold">Tanjil Ahamed</h2>
+                                <p className="text-sm font-bold">Frontend developer</p>
+                            </div>
+                        </div>
+                        <div className="flex gap-2 items-center my-3">
+                            <p >
+                                <Rating
+                                    className="text-2xl text-orange-500"
+                                    placeholderRating={2}
+                                    emptySymbol={<FaRegStar></FaRegStar>}
+                                    placeholderSymbol={<FaStar className='text-orange-500'></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
+                            </p>
+                            <p className="text-lg font-medium">1 Jun 2024</p>
+                        </div>
+                        <p>NexTech delivers a seamless user experience with well-researched content, engaging multimedia, and vibrant community interaction. Regular updates make it a go-to for tech enthusiasts, offering the latest trends and insights.</p>
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

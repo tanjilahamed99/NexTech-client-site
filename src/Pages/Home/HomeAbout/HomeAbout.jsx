@@ -3,7 +3,7 @@ import { MdEmail } from "react-icons/md";
 
 const HomeAbout = () => {
     return (
-        <div className="my-10 flex justify-evenly items-center flex-col lg:flex-row gap-5 " >
+        <div className="my-10 flex justify-evenly items-center flex-col lg:flex-row gap-5 bg-slate-100 md:p-10" >
             <div className="lg:w-1/2 w-full p-5 lg:p-0">
                 <h2 className="text-4xl font-extrabold lg:mb-20 mb-10">Contact</h2>
                 <div className="space-y-4">
