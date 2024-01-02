@@ -12,7 +12,7 @@ const Featured = () => {
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
-        className="my-20">
+        className="my-10">
             <SectionTittle subTittle={"Latest"} tittle={"Featured Products"}></SectionTittle>
             <div className="grid grid-cols-1  md:grid-cols-2 mx-5 lg:grid-cols-3 items-center gap-6 xl:gap-10 mt-5">
                 {
