@@ -45,7 +45,7 @@ const Navbar = () => {
                     isPending ? "pending" : isActive ? "text-red-500" : ""
                 }
             >
-                
+                Blog
             </NavLink>
         </li>
 
