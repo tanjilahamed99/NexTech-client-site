@@ -16,6 +16,7 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^1.6.2",
     "firebase": "^10.6.0",
+    "google-map-react": "^2.2.1",
     "keen-slider": "^6.8.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
