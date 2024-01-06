@@ -48,6 +48,16 @@ const Navbar = () => {
                 Blog
             </NavLink>
         </li>
+        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
+            <NavLink
+                to="/contact"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500" : ""
+                }
+            >
+                Contact
+            </NavLink>
+        </li>
 
 
         {

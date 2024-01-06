@@ -25,6 +25,7 @@ import UpdateCoupon from "../Pages/Dashboard/UpdateCoupon/UpdateCoupon";
 import Bookmark from "../Pages/Dashboard/Bookmark/Bookmark";
 import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
+import Contact from "../Pages/Contact/Contact";
 
 const Routes = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ const Routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />
+            },
+            {
+                path: '/contact',
+                element: <Contact />
             },
         ]
     },
