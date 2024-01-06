@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Captain America",
+        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
+        "role":"Admin"
+    },
+    {
+        "name" : "Super Man",
+        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
+        "role":"Manager"
+    },
+    {
+        "name" : "Jack Hold",
+        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
+        "role":"Hr Manager"
+    }
+]

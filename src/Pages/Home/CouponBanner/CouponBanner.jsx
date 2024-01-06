@@ -44,15 +44,15 @@ const CouponBanner = () => {
 
 
     return (
-        <div data-aos="flip-down" ref={sliderRef} className="keen-slider my-20 rounded-lg">
+        <div data-aos="flip-down" ref={sliderRef} className="keen-slider my-20  rounded-lg">
             {
                 coupon?.map(item => <div key={item._id} className="keen-slider__slide bg-cover bg-opacity-50 bg-fixed bg-center number-slide2 w-full h-[50vh] image-full hero"
                     style={{ backgroundImage: 'url(https://i.ibb.co/brfPFyZ/images-4.jpg)' }}
                 >
                     <div className="hero-overlay bg-opacity-60"></div>
-                    <div className=" hero-content flex-col text-white text-center space-y-2">
-                        <h2 className=' font-bold text-2xl '>Coupon Code : <span className='text-orange-700'>{item?.couponCode}</span></h2>
-                        <p className='text-lg text'><span className='text-sm font-bold'>Expired:</span> {item?.expiryDate}</p>
+                    <div className=" hero-content flex-col text-white text-center space-y-2 p-5">
+                        <h2 className=' font-bold md:text-2xl text-lg'>Coupon Code : <span className='text-orange-700'>{item?.couponCode}</span></h2>
+                        <p className='text-lg text'><span className='text-sm font-bold'>Expired:</span> {item?.expiryDate.slice(0,10)}</p>
                         <h4 className='text-xl flex gap-2 justify-center'><span className='text-orange-400'>{item?.discountAmount}%</span> Discount</h4>
                         <p className='text-sm'>{item?.desc}</p>
                     </div>
