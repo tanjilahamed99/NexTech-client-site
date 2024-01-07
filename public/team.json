@@ -1,17 +1,26 @@
 [
     {
-        "name" : "Captain America",
-        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
-        "role":"Admin"
+        "name": "Luke Jacobs",
+        "img": "https://i.ibb.co/dD7Q3R6/pngwing-com-21.png",
+        "desc": "We bring a wealth of skills from a wide range of backgrounds.",
+        "role": "WordPress Developer"
     },
     {
-        "name" : "Super Man",
-        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
-        "role":"Manager"
+        "name": "Sara Grant",
+        "img": "https://i.ibb.co/dDGf0rz/model-2.png",
+        "role": "Marketing Manager ",
+        "desc": "Our mission is to remove barriers and connect individuals."
     },
     {
-        "name" : "Jack Hold",
-        "img":"https://i.ibb.co/5kzyH8G/pngwing-com-6.png",
-        "role":"Hr Manager"
+        "name": "Reece Bronson",
+        "img": "https://i.ibb.co/9r49M5y/pngwing-com-22.png",
+        "role": "Financial Manager",
+        "desc": "We're a team of professionals who love what they do."
+    },
+    {
+        "name": "Claire Olson",
+        "img": "https://i.ibb.co/DgyzXyZ/model-1.png",
+        "role": "Sales Manager",
+        "desc": "Crafting brands that deeply resonate and stand out."
     }
 ]

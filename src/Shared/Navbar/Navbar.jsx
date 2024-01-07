@@ -38,7 +38,7 @@ const Navbar = () => {
             </NavLink>
         </li>
 
-        <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
+        {/* <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/blog"
                 className={({ isActive, isPending }) =>
@@ -47,7 +47,7 @@ const Navbar = () => {
             >
                 Blog
             </NavLink>
-        </li>
+        </li> */}
         <li className="relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-75 after:transition after:duration-300 after:origin-center">
             <NavLink
                 to="/contact"
