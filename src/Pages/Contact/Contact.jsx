@@ -16,7 +16,7 @@ const Contact = () => {
                 </p>
             </div>
             <ContactForm></ContactForm>
-            <div className="my-20 grid  grid-cols-3 gap-10">
+            <div className="my-20 grid grid-cols-1 md:grid-cols-2 px-5 lg:px-0  lg:grid-cols-3 gap-10">
                 <div className="flex gap-4 group cursor-pointer">
                     <LuBook className="text-6xl rounded-lg p-3 group-hover:bg-purple-600 group-hover:text-white w-[25%] bg-slate-200 text-black"></LuBook>
                     <div className="space-y-2">

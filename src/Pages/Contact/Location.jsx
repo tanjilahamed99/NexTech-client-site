@@ -3,8 +3,8 @@ const Location = () => {
 
 
     return (
-        <div className='my-40 flex bg-slate-100 py-20 px-20 gap-5 items-center'>
-            <div className="w-1/2">
+        <div className='my-40 flex flex-col-reverse md:flex-row px-5 bg-slate-100 py-20 lg:px-20 gap-5 items-center'>
+            <div className="md:w-1/2">
                 <h2 className="font-bold text-sm mb-4 text-purple-500">Our Locations</h2>
                 <h2 className="text-3xl font-bold">Planning a visit ?</h2>
                 <h2 className="text-3xl font-bold">Here is how you can find us.</h2>
@@ -19,7 +19,7 @@ const Location = () => {
                     <p className="text-[#757575] font-medium">Monday - Friday: 8AM - 5PM</p>
                 </div>
             </div>
-            <div className="w-1/2">
+            <div className="md:w-1/2">
                 <img className="h-[550px] w-full" src="https://i.ibb.co/25d57pw/brooke-cagle-HRZUzo-X1e6w-unsplash.jpg" alt="" />
             </div>
         </div>

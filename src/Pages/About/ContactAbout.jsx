@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ContactAbout = () => {
     return (
         <div className="flex gap-16 flex-col lg:flex-row items-center my-20">
@@ -11,9 +13,11 @@ const ContactAbout = () => {
                 <p className="lg:mb-32 mb-10 font-medium">
                     Ask about UiCore products, pricing, implementation, or anything else. Our highly trained reps are standing by, ready to help.
                 </p>
-                <hr className="text-black bg-black mb-5 border border-black font-bold"/>
+                <hr className="text-black bg-black mb-5 border border-black font-bold" />
                 <div className="flex items-center gap-5">
-                    <button className="btn btn-outline text-green-500 font-bold">Contact</button>
+                    <Link to={'/contact'}>
+                        <button className="btn btn-outline text-green-500 font-bold">Contact</button>
+                    </Link>
                     <span className="font-bold">Or Call +88019999999</span>
                 </div>
             </div>

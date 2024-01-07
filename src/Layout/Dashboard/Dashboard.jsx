@@ -108,7 +108,7 @@ const Dashboard = () => {
 
     return (
         <div className="container mx-auto gap-20 py-5 flex flex-col md:flex-row">
-            <div className="bg-gray-500 h-screen p-10">
+            <div className="bg-gray-500 p-10">
                 <h2 className="text-2xl font-bold mb-10 text-white">DashBoard</h2>
                 <ul className="text-bold  space-y-2 text-white">
                     {
