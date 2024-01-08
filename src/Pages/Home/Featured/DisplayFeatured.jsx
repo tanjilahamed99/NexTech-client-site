@@ -73,10 +73,12 @@ const DisplayFeatured = ({ featured }) => {
         }
     }
 
-//  rounded-br-[100px] rounded-tl-[70px]  bg-gradient-to-r from-purple-100 to-blue-100
 
     return (
-        <div className="card shadow-xl  py-5 rounded-br-[100px] rounded-tl-[70px]  bg-gradient-to-r from-purple-100 to-blue-100">
+        <div
+            data-aos="fade-right"
+            data-aos-duration="1500"
+            className="card shadow-xl  py-5 rounded-b-[50px] rounded-tl-[70px]">
             <img className='md:h-[250px] md:w-[250px] xl:h-[300px] xl:w-[300px] h-[200px] w-[200px] mx-auto rounded-2xl' src={image} alt="" />
             <div className="p-5 lg:p-7">
                 <Link to={`/featuredDetail/${_id}`}>
@@ -86,7 +88,7 @@ const DisplayFeatured = ({ featured }) => {
                     <p className='font-bold text-sm'>{brand}</p>
                     <p>
                         {
-                            upload_date.slice(0,10)
+                            upload_date.slice(0, 10)
                         }
                     </p>
                 </div>
