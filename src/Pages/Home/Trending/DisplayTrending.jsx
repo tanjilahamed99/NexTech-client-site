@@ -41,13 +41,13 @@ const DisplayTrending = ({ trendingData }) => {
 
 
     return (
-        <div className="card shadow-xl  py-5 rounded-b-[50px] rounded-tl-[70px]">
+        <div className="card shadow-xl  py-5 rounded-b-[50px] rounded-tl-[70px] group">
             <img className='md:h-[250px] md:w-[250px] xl:h-[300px] xl:w-[300px] h-[200px] w-[200px] mx-auto rounded-2xl' src={image} alt="" />
-            <div className="p-5 lg:p-7">
+            <div className="p-5 lg:p-7 ">
                 <Link to={`/trendingDetail/${_id}`}>
-                    <h2 className=" font-bold ">{name}</h2>
+                    <h2 className=" font-bold group-hover:text-purple-500">{name}</h2>
                 </Link>
-                <div className='flex md:flex-row  gap-3 mt-2 justify-between flex-col md:items-center font-semibold text-sm'>
+                <div className='flex flex-row  gap-3 mt-2 justify-between  md:items-center font-semibold text-sm'>
                     <p className='font-bold text-sm'>{brand}</p>
                     <p>
                         {

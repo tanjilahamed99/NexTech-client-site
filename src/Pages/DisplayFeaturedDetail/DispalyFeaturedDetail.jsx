@@ -81,13 +81,13 @@ const DisplayFeaturedDetail = () => {
 
     return (
         <div className="pt-32">
-            <div className="card flex flex-col md:flex-row gap-10 md:justify-center lg:w-[80%] xl:w-[70%] md:p-10 mb-20 mx-auto shadow-xl w-full">
+            <div className="card flex flex-col md:flex-row gap-10 md:justify-center lg:w-[80%] xl:w-[70%] md:p-10 mb-20 mx-auto lg:shadow-xl w-full">
                 <img className='h-[300px] w-[300px] mx-auto' src={featured?.image} alt="" />
                 <div className="card-body mt-5">
-                    <h2 className="text-2xl font-bold ">{featured?.name}</h2>
-                    <div className='flex flex-col md:flex-row md:items-center font-semibold text-sm'>
-                        <p>{featured?.brand}</p>
-                        <p>{featured?.upload_date}</p>
+                    <h2 className="md:text-2xl text-lg font-bold ">{featured?.name}</h2>
+                    <div className='flex flex-row md:items-center gap-3 font-semibold text-sm'>
+                        <p className="font-bold">{featured?.brand}</p>
+                        <p>{featured?.upload_date.slice(0,10)}</p>
                     </div>
                     <h2 className="text-lg">Votes: <span className="font-bold">{featured?.upvote}</span></h2>
                     <hr className='text-black text-lg my-4 border border-black' />

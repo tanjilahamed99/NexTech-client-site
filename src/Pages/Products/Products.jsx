@@ -50,7 +50,7 @@ const Products = () => {
                     <button className='btn btn-outline bg-blue-400 text-white ' type='submit'>Search</button>
                 </form>
             </div>
-            <div className='grid my-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10'>
+            <div className='grid my-10 grid-cols-1 px-5 md:grid-cols-2 lg:grid-cols-3 items-center gap-10'>
                 {
                     trending.map(item => <DisplayTrending key={item._id} trendingData={item}></DisplayTrending>)
                 }

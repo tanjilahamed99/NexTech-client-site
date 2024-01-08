@@ -87,15 +87,15 @@ const DisplayTrendingDetails = () => {
 
     return (
         <div className="py-32">
-            <div className="card flex flex-col md:flex-row gap-10 justify-center lg:w-[80%] w-full xl:w-[70%] md:p-10  mx-auto shadow-xl mb-20">
+            <div className="card flex flex-col md:flex-row gap-10 justify-center lg:w-[80%] w-full xl:w-[70%] md:p-10  mx-auto lg:shadow-xl mb-20">
                 <img className='h-[300px] w-[300px] mx-auto' src={trending?.image} alt="" />
                 <div className="card-body mt-5">
                     <h2 className="text-2xl font-bold ">{trending?.name}</h2>
                     <div className='flex items-center font-semibold text-sm'>
                         <p>{trending?.brand}</p>
-                        <p>{trending?.upload_date}</p>
+                        <p>{trending?.upload_date.slice(0,10)}</p>
                     </div>
-                    <h2 className="text-lg">Votes: <span className="font-bold">{trending?.upvote}</span></h2>
+                    <h2 className="text-lg">Votes: <span className="font-bold">{trending?.upVote}</span></h2>
                     <hr className='text-black text-lg my-4 border border-black' />
                     <div className='md:flex  items-center w-fit gap-4'>
                         <p>#{trending?.tags[0]}</p>
@@ -113,7 +113,7 @@ const DisplayTrendingDetails = () => {
             <div>
                 {/* review section */}
                 {/* display reviews */}
-                <div className="grid grid-cols-1 gap-10 items-center md:grid-cols-2  lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-10 mx-5 items-center md:grid-cols-2  lg:grid-cols-3">
                     {
                         review.map(item => <DisplayReview key={item._id} review={item}></DisplayReview>)
                     }

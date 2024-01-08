@@ -1,8 +1,8 @@
 
  
- # live link : https://nextech-4bdaf.web.app
- # Github CLient : https://github.com/tanjilahamed99/NexTech-client-site
- # Github server : https://github.com/tanjilahamed99/NexTech-server-site
+ ## live link : https://nextech-4bdaf.web.app
+ ## Github CLient : https://github.com/tanjilahamed99/NexTech-client-site
+ ## Github server : https://github.com/tanjilahamed99/NexTech-server-site
 
 
 # NexTech five feature
