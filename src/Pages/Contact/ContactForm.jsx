@@ -16,7 +16,10 @@ const ContactForm = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-slate-50 lg:w-1/2 w-full md:px-20 md:py-40 p-4  space-y-8">
+            <div
+                data-aos="fade-right"
+                data-aos-duration="2000"
+                className="bg-slate-50 lg:w-1/2 w-full md:px-20 md:py-40 p-4  space-y-8">
                 <div>
                     <input type="text" placeholder="Name" className="input  border-none w-full text-bold " />
                     <hr className="w-full border border-black" />

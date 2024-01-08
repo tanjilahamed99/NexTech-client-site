@@ -16,8 +16,10 @@ const OurTeam = () => {
                     <div className="my-4  grid grid-cols-1 md:grid-cols-2 gap-5  lg:grid-cols-4 items-center bg-center bg-cover  bg-fixed justify-center mx-auto">
                         {
 
-                            teamData?.map((data, idx) => <div key={idx} 
-                            className=" mt-10 w-full hover:mt-5  bg-white group  shadow-sm shadow-white rounded-2xl ">
+                            teamData?.map((data, idx) => <div key={idx}
+                                data-aos="fade-right"
+                                data-aos-duration="3000"
+                                className=" mt-10 w-full hover:mt-5  bg-white group  shadow-sm shadow-white rounded-2xl ">
                                 <div className=" shadow-lg bg-gray-200 pt-5">
                                     <img className="w-full h-[250px] mx-auto  " src={data.img} alt="" />
                                 </div>
